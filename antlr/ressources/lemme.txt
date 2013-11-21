@@ -1,0 +1,33 @@
+veux savoir	{vouloir}
+veux tous	{vouloir}
+veux	{vouloir}
+quel est	{vouloir}
+quels sont	{vouloir}
+quelle est	{vouloir}
+quelles sont	{vouloir}
+quels	{vouloir}
+quelles	{vouloir}
+quelle	{vouloir}
+quel	{vouloir}
+comment	{vouloir}
+donnez-moi	{vouloir}
+voudrais	{vouloir}
+aimerais	{vouloir}
+donne moi	{vouloir}
+qui	{vouloir}
+
+combien fois	{compter}
+combien	{compter}
+nombre	{compter}
+
+est-il	{existance}
+y-a-t-il	{existance}
+
+articles	{article}
+article	{article}
+auteurs	{auteur}
+auteur	{auteur}
+pages	{page}
+page	{page}
+unes	{une}
+une	{une}

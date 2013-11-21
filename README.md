@@ -1,4 +1,7 @@
-lo17a008
+#lo17a008
 ========
 
-Contains the projects of lo17
+Contains the projects of lo17:
+
+* antlr
+* searchProject

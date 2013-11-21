@@ -1,0 +1,11 @@
+grand 	grand
+grenade 	grenade
+manger 	manger
+manager 	manager
+veux 	veux
+vue 	vue
+avez 	avez
+liste 	liste
+reste 	reste
+peste 	peste
+ils 	ils
