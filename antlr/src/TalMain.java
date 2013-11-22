@@ -9,9 +9,11 @@ public class TalMain {
 	public static void main(String args[]) {
 		Cleaner cleaner = new Cleaner();
 		Scanner scanner = new Scanner(System.in);
+		
 		System.out.print("Texte : ");
 		String s = scanner.nextLine();
 		System.out.println(cleaner.cleanString(s));
+		
 		while (!s.equals("*")) {
 			try {
 				Tal_simpleLexer lexer = new Tal_simpleLexer(
@@ -25,5 +27,6 @@ public class TalMain {
 			System.out.print("Texte : ");
 			s = scanner.nextLine();
 		}
+		scanner.close();
 	}
 }

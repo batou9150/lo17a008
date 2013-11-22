@@ -6,11 +6,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+/**
+ * Gives the methods to clean up queries
+ * 
+ */
 public class Cleaner {
 
 	LinkedHashMap<String, String> lemme = new LinkedHashMap<String, String>();
 	ArrayList<String> stoplist = new ArrayList<String>();
 
+	/**
+	 * Constructor of Cleaner
+	 */
 	Cleaner() {
 		BufferedReader br = null;
 		String chaine;
@@ -28,9 +35,10 @@ public class Cleaner {
 					}
 				}
 				br.close();
-				
+
 				// Loading the stoplist
-				br = new BufferedReader(new FileReader("ressources/stoplist.txt"));
+				br = new BufferedReader(new FileReader(
+						"ressources/stoplist.txt"));
 				while ((chaine = br.readLine()) != null) {
 					stoplist.add(chaine);
 				}
@@ -45,6 +53,13 @@ public class Cleaner {
 		}
 	}
 
+	/**
+	 * Remove all characters which are in the stop-list
+	 * 
+	 * @param s
+	 *            The string to clean
+	 * @return The string cleaned
+	 */
 	String applyStoplist(String s) {
 		for (int i = 0; i < stoplist.size(); i++) {
 			s = s.replaceAll(" " + stoplist.get(i) + " ", " ");
@@ -55,6 +70,13 @@ public class Cleaner {
 		return s;
 	}
 
+	/**
+	 * Replace words by their lemme
+	 * 
+	 * @param s
+	 *            The string to clean
+	 * @return The string cleaned
+	 */
 	String applyLemme(String s) {
 		for (String n : lemme.keySet()) {
 			s = s.replaceAll(" " + n + " ", " " + lemme.get(n) + " ");
@@ -65,6 +87,13 @@ public class Cleaner {
 		return s;
 	}
 
+	/**
+	 * Remove all single characters
+	 * 
+	 * @param s
+	 *            The string to clean
+	 * @return The string cleaned
+	 */
 	String deleteOneLetter(String s) {
 		s = s.replaceAll("'", " ");
 		String t = "";
@@ -84,6 +113,13 @@ public class Cleaner {
 		return s;
 	}
 
+	/**
+	 * Clean the string
+	 * 
+	 * @param s
+	 *            The string to clean
+	 * @return The string cleaned
+	 */
 	String cleanString(String s) {
 		return applyLemme(applyStoplist(deleteOneLetter(s.toLowerCase())));
 	}
