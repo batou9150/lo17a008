@@ -32,7 +32,7 @@ public class Tal_simpleParser extends Parser {
 	}
 
 	public String getGrammarFileName() {
-		return "/volsme/users/lo17a008/Téléchargements/Tal_simple.g";
+		return "ressources/Tal_simple.g";
 	}
 
 	// $ANTLR start "listephrases"

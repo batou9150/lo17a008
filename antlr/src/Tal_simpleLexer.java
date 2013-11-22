@@ -29,7 +29,7 @@ public class Tal_simpleLexer extends Lexer {
 	}
 
 	public String getGrammarFileName() {
-		return "/volsme/users/lo17a008/Téléchargements/Tal_simple.g";
+		return "ressources/Tal_simple.g";
 	}
 
 	// $ANTLR start "NOM"

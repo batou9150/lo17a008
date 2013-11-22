@@ -9,11 +9,12 @@ public class TalMain {
 	public static void main(String args[]) {
 		Cleaner cleaner = new Cleaner();
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.print("Texte : ");
 		String s = scanner.nextLine();
-		System.out.println(cleaner.cleanString(s));
-		
+		s = cleaner.cleanString(s);
+		System.out.println(s);
+
 		while (!s.equals("*")) {
 			try {
 				Tal_simpleLexer lexer = new Tal_simpleLexer(
@@ -23,9 +24,12 @@ public class TalMain {
 				String arbre = parser.listephrases();
 				System.out.println(arbre);
 			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 			System.out.print("Texte : ");
 			s = scanner.nextLine();
+			s = cleaner.cleanString(s);
+			System.out.println(s);
 		}
 		scanner.close();
 	}
