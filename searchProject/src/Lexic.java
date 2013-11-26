@@ -37,6 +37,7 @@ public class Lexic {
 		proximityKeyboard.put("l", "kmop;:./");
 		proximityKeyboard.put("m", "lù%p^\":!/§");
 		proximityKeyboard.put("w", "<>xqs");
+		proximityKeyboard.put("x", "wsdc");
 		proximityKeyboard.put("c", "xvfd");
 		proximityKeyboard.put("v", "bcfg");
 		proximityKeyboard.put("b", "vngh");
@@ -48,8 +49,7 @@ public class Lexic {
 		try {
 			try {
 				br = new BufferedReader(
-						new FileReader("ressources/lexique.txt")); // or use
-																	// lexiqueFull.txt
+						new FileReader("../searchProject/ressources/lexiqueFull.txt"));
 				String[] splittedString;
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split(" \t");
@@ -98,11 +98,12 @@ public class Lexic {
 				if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
 					String tmp = proximityKeyboard.get(String.valueOf(s1
 							.charAt(i - 1)));
-					if (s1.length() != i
-							&& tmp.indexOf(String.valueOf(s1.charAt(i))) != -1) {
+					if(tmp.isEmpty()){
+						System.out.println(String.valueOf(s1.charAt(i - 1)) + " NOT FOUND");
+					}
+					else if (s1.length() != i
+								&& tmp.indexOf(String.valueOf(s1.charAt(i))) != -1) {
 						cout = 0;
-						System.out.println(tmp.indexOf(String.valueOf(s1
-								.charAt(i))));
 					} else {
 						cout = mainIndex.coutSubstitution / 3;
 					}
@@ -151,7 +152,7 @@ public class Lexic {
 				}
 			}
 		}
-		// Tri à bulle
+		// Tri � bulle
 		Set<String> keys = tempList.keySet();
 		Collection<Integer> values = tempList.values();
 		Object[] keysArray = keys.toArray();
@@ -194,7 +195,7 @@ public class Lexic {
 				tempList.put(lemme.get(n), i);
 			}
 		}
-		// Tri à bulle
+		// Tri � bulle
 		Set<String> keys = tempList.keySet();
 		Collection<Integer> values = tempList.values();
 		Object[] keysArray = keys.toArray();

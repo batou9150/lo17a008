@@ -7,14 +7,14 @@ import org.antlr.runtime.CommonTokenStream;
 public class TalMain {
 
 	public static void main(String args[]) {
-		Cleaner cleaner = new Cleaner();
+		Lexic lexic = new Lexic();
+		Cleaner cleaner = new Cleaner(lexic);
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("Texte : ");
 		String s = scanner.nextLine();
 		s = cleaner.cleanString(s);
 		System.out.println(s);
-
 		while (!s.equals("*")) {
 			try {
 				Tal_simpleLexer lexer = new Tal_simpleLexer(

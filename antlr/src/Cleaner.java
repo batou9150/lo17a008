@@ -12,13 +12,15 @@ import java.util.LinkedHashMap;
  */
 public class Cleaner {
 
-	LinkedHashMap<String, String> lemme = new LinkedHashMap<String, String>();
-	ArrayList<String> stoplist = new ArrayList<String>();
+	private LinkedHashMap<String, String> lemme = new LinkedHashMap<String, String>();
+	private ArrayList<String> stoplist = new ArrayList<String>();
+	private Lexic lexic;
 
 	/**
 	 * Constructor of Cleaner
 	 */
-	Cleaner() {
+	public Cleaner(Lexic lexic) {
+		this.lexic = lexic;
 		BufferedReader br = null;
 		String chaine;
 		try {
@@ -29,8 +31,6 @@ public class Cleaner {
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split("\t");
 					if (splittedString.length == 2) {
-						System.out.println(splittedString[0] + " "
-								+ splittedString.length);
 						lemme.put(splittedString[0], splittedString[1]);
 					}
 				}
@@ -121,6 +121,12 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
-		return applyLemme(applyStoplist(deleteOneLetter(s.toLowerCase())));
+		s = applyStoplist(deleteOneLetter(s.toLowerCase()));
+		String[] result = lexic.search(s);
+		if (result != null && result.length > 0)
+		{
+			s = result[0];
+		}
+		return applyLemme(s);
 	}
 }
