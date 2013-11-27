@@ -1,4 +1,4 @@
-grammar grammaire_finale;
+grammar Grammar;
 
 //détection de la requête
 SELECT : 'vouloir'|'retourner'|'donner'|'souhaiter'
@@ -35,7 +35,7 @@ VAR_EMAIL : ('A'..'Z' | 'a'..'z' | '0'..'9')+ ('@')('A'..'Z' | 'a'..'z' | '0'..'
 WS  : (' ' |'\t' | '\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\'' | 'le') {skip();} | '\n' 
 ;
 
-POINT : '.'
+POINT : '.' | '?' | '!'
 ; 
 
 JOUR : ('0'..'3')?('0'..'9')
@@ -84,25 +84,39 @@ requete returns [Arbre req_arbre = new Arbre("")]
 ;
 
 sous_requetes returns [Arbre sous_requete_arbres = new Arbre("")] 
-	@init	{Arbre sr_arbre}  :
+	@init	{Arbre sr_where = new Arbre("", "WHERE"), sr_FROM = new Arbre("", "FROM");}  :
 	req = sous_requete {
+		sous_requete_arbres.ajouteFils(sr_FROM);
+		sous_requete_arbres.ajouteFils(sr_where);
+		sr_FROM.ajouteFils(new Arbre(req.fils.mot));
+		sr_where.ajouteFils(req.fils.frere);
 	}
-	(conj req2 = sous_requete {
+	(c = conj req2 = sous_requete {
+		sr_FROM.ajouteFils(new Arbre(","));
+		sr_FROM.ajouteFils(new Arbre(req2.fils.mot));
+		sr_where.ajouteFils(c);
+		sr_where.ajouteFils(req2.fils.frere);
 	})*
 ;
 
-sous_requete returns [Arbre sous_requete_arbre = new Arbre("")] 
-	@init	{Arbre sr_arbre}  :
-	(req1 = requete_auteur {
-	} |
-	req1 = requete_article {
-	} |
-	req1 = requete_date {
-	} |
-	req1 = requete_theme {
-	} |
-	req1 = requete_titre {
-	})
+sous_requete returns [Arbre sous_requete_arbre = null] 
+	@init	{}  :
+	(
+		req = requete_auteur  {
+			sous_requete_arbre = req;
+		} |
+		req = requete_article {
+			sous_requete_arbre = req;
+		} |
+		req = requete_date {
+			sous_requete_arbre = req;
+		} |
+		req = requete_theme {
+			sous_requete_arbre = req;
+		} |
+		req = requete_titre {
+			sous_requete_arbre = req;
+		})
 ;
 //Requête Mots
 //Requête auteurs
@@ -119,7 +133,7 @@ params returns [Arbre les_pars_arbre = new Arbre("")]
 			}
 		(c = conj par2 = param
 			{
-				conj_arbre = $c.conj_arbre
+				conj_arbre = $c.conj_arbre;
 				par2_arbre = $par2.lepar_arbre;
 				les_pars_arbre.ajouteFils(conj_arbre);
 				les_pars_arbre.ajouteFils(par2_arbre);
@@ -130,20 +144,20 @@ params returns [Arbre les_pars_arbre = new Arbre("")]
 //Paramètre mot
 param returns [Arbre lepar_arbre = new Arbre("")] :
 	a = VAR_MOT
-		{ lepar_arbre.ajouteFils(new Arbre("mot like ", "'%"+a.getText()+"%'"));}
+		{ lepar_arbre.ajouteFils(new Arbre("mot like ", "'\%"+a.getText()+"\%'"));}
 ;
 
 emails returns [Arbre emails_arbre = new Arbre("")] 
-	@init	{Arbre email1_arbre, email2_arbre;} : 
+	@init	{Arbre email1_arbre, email2_arbre, conj_arbre;} : 
 	email1 = email
 		{
 			email1_arbre = $email1.email_arbre;
 			emails_arbre.ajouteFils(email1_arbre);
 		}
-	(conj email2 = email
+	(c = conj email2 = email
 		{
-			conj_arbre = $c.conj_arbre
-			email2_arbre = $email2.lepar_arbre;
+			conj_arbre = $c.conj_arbre;
+			email2_arbre = $email2.email_arbre;
 			emails_arbre.ajouteFils(conj_arbre);
 			emails_arbre.ajouteFils(email2_arbre);
 		}
@@ -151,17 +165,17 @@ emails returns [Arbre emails_arbre = new Arbre("")]
 ;
 
 email returns [Arbre email_arbre = new Arbre("")] 
-	@init	{Arbre email1_arbre} :
+	@init	{} :
 	a = VAR_EMAIL
 		{
-			email_arbre.ajouteFils(new Arbre("email like ", "'%"+a.getText()+"%'"));
+			email_arbre.ajouteFils(new Arbre("email like ", "'\%"+a.getText()+"\%'"));
 		}
 ;
 
 requete_auteur returns [Arbre auteur_arbre = new Arbre("")] 
-	@init	{Arbre auteur_arbre} :
+	@init	{} :
 	AUTEUR {
-		auteur_arbre.ajouteFils(new Arbre("FROM", "auteur");
+		auteur_arbre.ajouteFils(new Arbre("FROM", "auteur"));
 	}
 	emailz = emails {
 		auteur_arbre.ajouteFils($emailz.emails_arbre);
@@ -169,9 +183,9 @@ requete_auteur returns [Arbre auteur_arbre = new Arbre("")]
 ;
 
 requete_article returns [Arbre article_arbre = new Arbre("")] 
-	@init	{Arbre article_arbre} :
+	@init	{} :
 	MOT {
-		article_arbre.ajouteFils(new Arbre("FROM", "titreresume");
+		article_arbre.ajouteFils(new Arbre("FROM", "titreresume"));
 	}
 	paramz = params {
 		article_arbre.ajouteFils($paramz.les_pars_arbre);
@@ -179,17 +193,17 @@ requete_article returns [Arbre article_arbre = new Arbre("")]
 ;
 
 requete_date returns [Arbre date_arbre = new Arbre("")] 
-	@init	{Arbre date_arbre}  :
+	@init	{}  :
 	PARAITRE {
 		date_arbre.ajouteFils(new Arbre("FROM", "datearticle"));
 	}
 	date = VAR_DATE {
-		date_arbre.ajouteFils(new Arbre("CONCAT_WS(' ', 'jj', 'mois', 'annee') = ", date.getText());
+		date_arbre.ajouteFils(new Arbre("CONCAT_WS(' ', 'jj', 'mois', 'annee') = ", date.getText()));
 	}
 ;
 
 requete_theme returns [Arbre theme_arbre = new Arbre("")] 
-	@init	{Arbre theme_arbre}  :
+	@init	{}  :
 	THEME {
 		theme_arbre.ajouteFils(new Arbre("FROM", "theme"));
 	}
@@ -199,7 +213,7 @@ requete_theme returns [Arbre theme_arbre = new Arbre("")]
 ;
 
 requete_titre returns [Arbre titre_arbre = new Arbre("")]
-	@init	{Arbre tmp_arbre}  :
+	@init	{}  :
 	TITRE {
 		titre_arbre.ajouteFils(new Arbre("FROM", "titre"));
 	}
@@ -213,6 +227,6 @@ conj returns [Arbre conj_arbre = new Arbre("")] :
 		conj_arbre.ajouteFils(new Arbre("", "AND"));
 	} |
 	CONJOU {
-		conj_arbre.ajouteFils(new Arbre("", "OR"));
+		conj_arbre.ajouteFils( new Arbre("", "OR"));
 	}
 ;

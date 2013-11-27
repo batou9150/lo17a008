@@ -127,6 +127,9 @@ public class Cleaner {
 		{
 			s = result[0];
 		}
-		return applyLemme(s);
+		s = applyLemme(s);
+		s = s.replaceAll("[\\{\\}]", "");
+		// todo : Remove all accents
+		return s;
 	}
 }

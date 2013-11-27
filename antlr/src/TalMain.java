@@ -17,11 +17,14 @@ public class TalMain {
 		System.out.println(s);
 		while (!s.equals("*")) {
 			try {
-				Tal_simpleLexer lexer = new Tal_simpleLexer(
-						new ANTLRReaderStream(new StringReader(s)));
+				GrammarLexer lexer = new GrammarLexer(new ANTLRReaderStream(
+						new StringReader(s)));
 				CommonTokenStream tokens = new CommonTokenStream(lexer);
-				Tal_simpleParser parser = new Tal_simpleParser(tokens);
-				String arbre = parser.listephrases();
+				GrammarParser parser = new GrammarParser(tokens);
+				String arbre = parser.listerequetes();
+				arbre = arbre.replaceAll("[\\(\\)\t]", "");
+				arbre = arbre.trim();
+				arbre = arbre.replaceAll("( )+", " ");
 				System.out.println(arbre);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

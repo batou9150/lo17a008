@@ -25,7 +25,7 @@ public class Lexic {
 		proximityKeyboard.put("u", "yihjk");
 		proximityKeyboard.put("i", "uojkl");
 		proximityKeyboard.put("o", "ipklm\"");
-		proximityKeyboard.put("p", "o^lmÃ¹%");
+		proximityKeyboard.put("p", "o^lmà%)");
 		proximityKeyboard.put("q", "azsw<>");
 		proximityKeyboard.put("s", "qdzewx");
 		proximityKeyboard.put("d", "sferxc");
@@ -35,7 +35,7 @@ public class Lexic {
 		proximityKeyboard.put("j", "hkui,n?");
 		proximityKeyboard.put("k", "jlio,;?.");
 		proximityKeyboard.put("l", "kmop;:./");
-		proximityKeyboard.put("m", "lÃ¹%p^\":!/Â§");
+		proximityKeyboard.put("m", "lù%p^:/!§");
 		proximityKeyboard.put("w", "<>xqs");
 		proximityKeyboard.put("x", "wsdc");
 		proximityKeyboard.put("c", "xvfd");
@@ -98,7 +98,7 @@ public class Lexic {
 				if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
 					String tmp = proximityKeyboard.get(String.valueOf(s1
 							.charAt(i - 1)));
-					if(tmp.isEmpty()){
+					if(tmp == null || (tmp != null && tmp.isEmpty())){
 						System.out.println(String.valueOf(s1.charAt(i - 1)) + " NOT FOUND");
 					}
 					else if (s1.length() != i
