@@ -70,32 +70,56 @@ requete returns [Arbre req_arbre = new Arbre("")]
 			})?
 		(ARTICLE
 			{
-			req_arbre.ajouteFils(new Arbre("","(article)"));
+				req_arbre.ajouteFils(new Arbre("","(article)"));
+			}
+		sr = sous_requetes_article
+			{
+				ps_arbre = $sr.sous_requete_arbres;
+				req_arbre.ajouteFils(ps_arbre);
 			}
 		 | PAGE
 			{
 			req_arbre.ajouteFils(new Arbre("","(page)"));
+			}
+		sr = sous_requetes_page
+			{
+				ps_arbre = $sr.sous_requete_arbres;
+				req_arbre.ajouteFils(ps_arbre);
 			})
-		sr = sous_requetes {
-			ps_arbre = $sr.sous_requete_arbres;
-			req_arbre.ajouteFils(ps_arbre);
-		}
 		
 ;
 
-sous_requetes returns [Arbre sous_requete_arbres = new Arbre("")] 
-	@init	{Arbre sr_where = new Arbre("", "WHERE"), sr_FROM = new Arbre("", "FROM");}  :
+sous_requetes_page returns [Arbre sous_requete_arbres = new Arbre("")] 
+	@init	{Arbre sr_WHERE = new Arbre("", "WHERE"), sr_FROM = new Arbre("", "FROM");}  :
 	req = sous_requete {
 		sous_requete_arbres.ajouteFils(sr_FROM);
-		sous_requete_arbres.ajouteFils(sr_where);
+		sous_requete_arbres.ajouteFils(sr_WHERE);
 		sr_FROM.ajouteFils(new Arbre(req.fils.mot));
-		sr_where.ajouteFils(req.fils.frere);
+		sr_WHERE.ajouteFils(req.fils.frere);
 	}
 	(c = conj req2 = sous_requete {
 		sr_FROM.ajouteFils(new Arbre(","));
 		sr_FROM.ajouteFils(new Arbre(req2.fils.mot));
-		sr_where.ajouteFils(c);
-		sr_where.ajouteFils(req2.fils.frere);
+		sr_WHERE.ajouteFils(c);
+		sr_WHERE.ajouteFils(req2.fils.frere);
+		sr_WHERE.ajouteFils(new Arbre("AND", req.fils.mot + ".page = " + req2.fils.mot + ".page"));
+	})*
+;
+
+sous_requetes_article returns [Arbre sous_requete_arbres = new Arbre("")] 
+	@init	{Arbre sr_WHERE = new Arbre("", "WHERE"), sr_FROM = new Arbre("", "FROM");}  :
+	req = sous_requete {
+		sous_requete_arbres.ajouteFils(sr_FROM);
+		sous_requete_arbres.ajouteFils(sr_WHERE);
+		sr_FROM.ajouteFils(new Arbre(req.fils.mot));
+		sr_WHERE.ajouteFils(req.fils.frere);
+	}
+	(c = conj req2 = sous_requete {
+		sr_FROM.ajouteFils(new Arbre(","));
+		sr_FROM.ajouteFils(new Arbre(req2.fils.mot));
+		sr_WHERE.ajouteFils(c);
+		sr_WHERE.ajouteFils(req2.fils.frere);
+		sr_WHERE.ajouteFils(new Arbre("AND", req.fils.mot + ".article = " + req2.fils.mot + ".article"));
 	})*
 ;
 
