@@ -28,7 +28,7 @@ public class Cleaner {
 			try {
 				String[] splittedString;
 				// Loading lemmes
-				br = new BufferedReader(new FileReader("ressources/lemme.txt"));
+				br = new BufferedReader(new FileReader("../antlr/ressources/lemme.txt"));
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split("\t");
 					if (splittedString.length == 2) {
@@ -40,7 +40,7 @@ public class Cleaner {
 
 				// Loading advancedLemme
 				br = new BufferedReader(new FileReader(
-						"ressources/advancedLemme.txt"));
+						"../antlr/ressources/advancedLemme.txt"));
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split("\t");
 					if (splittedString.length == 2) {
@@ -53,7 +53,7 @@ public class Cleaner {
 
 				// Loading the stoplist
 				br = new BufferedReader(new FileReader(
-						"ressources/stoplist.txt"));
+						"../antlr/ressources/stoplist.txt"));
 				while ((chaine = br.readLine()) != null) {
 					stoplist.add(Utils.removeAccents(chaine));
 				}
@@ -128,10 +128,11 @@ public class Cleaner {
 	 */
 	String cleanString(String s) {
 		s = applyStoplist(Utils.deleteOneLetter(s.toLowerCase()));
-		String[] result = lexic.search(s);
+		/*String[] result = lexic.search(s);
 		if (result != null && result.length > 0) {
 			s = result[0];
 		}
+		*/
 		s = applyLemme(s);
 		// System.out.println(s);
 		s = applyAdvancedLemme(s);

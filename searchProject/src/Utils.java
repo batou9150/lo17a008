@@ -1,12 +1,12 @@
 public class Utils {
 
 	static String removeAccents(String s) {
-		s = s.replaceAll("[à]", "a");
-		s = s.replaceAll("[éèëê]", "e");
-		s = s.replaceAll("[ìïî]", "i");
-		s = s.replaceAll("[öô]", "o");
-		s = s.replaceAll("[ù]", "u");
-		s = s.replaceAll("[ç]", "c");
+		s = s.replaceAll("[Ã ]", "a");
+		s = s.replaceAll("[Ã©Ã¨Ã«Ãª]", "e");
+		s = s.replaceAll("[Ã®Ã¯]", "i");
+		s = s.replaceAll("[Ã¶Ã´]", "o");
+		s = s.replaceAll("[Ã¹]", "u");
+		s = s.replaceAll("[Ã§]", "c");
 		return s;
 	}
 

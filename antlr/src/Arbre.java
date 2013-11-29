@@ -45,9 +45,7 @@ class Arbre {
 	private String sortArbreAvecNl() {
 		String arbre = categorie + " " + mot + " ";
 		if (fils != null) {
-			arbre = arbre + " ( ";
-			arbre = arbre + fils.sortArbreAvecNl();
-			arbre = arbre + " )";
+			arbre = arbre + " " + fils.sortArbreAvecNl() + " ";
 		}
 		if (frere != null) {
 			arbre = arbre + frere.sortArbreAvecNl();

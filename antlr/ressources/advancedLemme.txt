@@ -16,9 +16,9 @@ aimerais	{vouloir}
 donne moi	{vouloir}
 qui	{vouloir}
 
-combien fois	{compter}
-combien	{compter}
-nombre	{compter}
+combien fois	{vouloir nombre}
+combien	{vouloir nombre}
+nombre	{nombre}
 
 est-il	{existance}
 y-a-t-il	{existance}

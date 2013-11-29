@@ -5,28 +5,25 @@ import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
 public class TalMain {
-	static Scanner scanner;
-	static Lexic lexic;
-	static Cleaner cleaner;
 
 	/**
-	 * Point d'entré du programme Propose à l'utilisateur de saisir une demande
-	 * à traduire en SQL jusqu'a la saisie d'un caractère spéciale.
+	 * Point d'entrï¿½ du programme Propose ï¿½ l'utilisateur de saisir une demande
+	 * ï¿½ traduire en SQL jusqu'a la saisie d'un caractï¿½re spï¿½ciale.
 	 * 
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		scanner = new Scanner(System.in);
-		lexic = new Lexic();
-		cleaner = new Cleaner(lexic);
+		Scanner scanner = new Scanner(System.in);
+		Lexic lexic = new Lexic();
+		Cleaner cleaner = new Cleaner(lexic);
 
-		// test(); // Test tout le corpus de questions
+		// test(cleaner); // Test tout le corpus de questions
 
 		String s;
 		do {
 			System.out.print("Texte : ");
 			s = scanner.nextLine();
-			System.out.println(toSQLQuery(s));
+			System.out.println(toSQLQuery(s, cleaner));
 		} while (!s.equals("*"));
 
 		scanner.close();
@@ -35,7 +32,7 @@ public class TalMain {
 	/**
 	 * Permet de tester tout le corpus de questions
 	 */
-	public static void test() {
+	public static void test(Cleaner cleaner) {
 		int countOK = 0, countAll = 0;
 		BufferedReader br = null;
 		String chaine;
@@ -43,9 +40,9 @@ public class TalMain {
 		try {
 			try {
 				br = new BufferedReader(new FileReader(
-						"ressources/corpusQuestionA09.txt"));
+						"../antlr/ressources/corpusQuestionA09.txt"));
 				while ((chaine = br.readLine()) != null) {
-					result = toSQLQuery(chaine);
+					result = toSQLQuery(chaine, cleaner);
 					countAll++;
 					System.out.println(countAll + " : " + result);
 					if (result != null && result != "select distinct") {
@@ -66,14 +63,14 @@ public class TalMain {
 	}
 
 	/**
-	 * Permet de traiter une requête dans la language native Et retourne la
-	 * requâte SQL correspondante
+	 * Permet de traiter une requï¿½te dans la language native Et retourne la
+	 * requï¿½te SQL correspondante
 	 * 
 	 * @param s
-	 *            La requête dans la language native
-	 * @return La requâte SQL correspondante
+	 *            La requï¿½te dans la language native
+	 * @return La requï¿½te SQL correspondante
 	 */
-	public static String toSQLQuery(String s) {
+	public static String toSQLQuery(String s, Cleaner cleaner) {
 		String result = null;
 
 		s = cleaner.cleanString(s);
@@ -86,7 +83,7 @@ public class TalMain {
 			GrammarParser parser = new GrammarParser(tokens);
 
 			result = parser.listerequetes();
-			result = result.replaceAll("[\\(\\)\t]", "");
+			result = result.replaceAll("\t", "");
 			result = result.trim();
 			result = result.replaceAll("( )+", " ");
 		} catch (Exception e) {
