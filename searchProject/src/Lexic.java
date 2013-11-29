@@ -48,12 +48,13 @@ public class Lexic {
 		String chaine;
 		try {
 			try {
-				br = new BufferedReader(
-						new FileReader("../searchProject/ressources/lexiqueFull.txt"));
+				br = new BufferedReader(new FileReader(
+						"../searchProject/ressources/lexiqueFull.txt"));
 				String[] splittedString;
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split(" \t");
-					lemme.put(splittedString[0], splittedString[1]);
+					lemme.put(Utils.removeAccents(splittedString[0]),
+							Utils.removeAccents(splittedString[1]));
 				}
 			} catch (EOFException e) {
 				br.close();
@@ -69,18 +70,27 @@ public class Lexic {
 		return lemme.get(search);
 	}
 
+	/**
+	 * Get the proximity of the two strings by the prefix algorithm
+	 * 
+	 * @param s1
+	 *            First string
+	 * @param s2
+	 *            Second string
+	 * @return The proximity of the two strings
+	 */
 	Integer getPrefixProximity(String s1, String s2) {
 		if (s1.length() < seuilPrefix || s2.length() < seuilPrefix) {
-			return 0;
+			return 0; // Chaines trop petites
 		} else if (s1.length() - s2.length() > seuilPrefix) {
-			return 0;
+			return 0; // Chaines trop différentes
 		} else {
 			int i = 0;
 			while (i < s1.length() && i < s2.length()
 					&& s1.charAt(i) == s2.charAt(i)) {
 				i++;
 			}
-			return i;
+			return i; // Nombre de lettre identique
 		}
 	}
 
@@ -98,11 +108,12 @@ public class Lexic {
 				if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
 					String tmp = proximityKeyboard.get(String.valueOf(s1
 							.charAt(i - 1)));
-					if(tmp == null || (tmp != null && tmp.isEmpty())){
-						System.out.println(String.valueOf(s1.charAt(i - 1)) + " NOT FOUND");
-					}
-					else if (s1.length() != i
-								&& tmp.indexOf(String.valueOf(s1.charAt(i))) != -1) {
+					if (tmp == null || (tmp != null && tmp.isEmpty())) {
+						// System.out.println(String.valueOf(s1.charAt(i - 1)) +
+						// " NOT FOUND");
+						cout = mainIndex.coutSubstitution / 3;
+					} else if (s1.length() != i
+							&& tmp.indexOf(String.valueOf(s1.charAt(i))) != -1) {
 						cout = 0;
 					} else {
 						cout = mainIndex.coutSubstitution / 3;
@@ -134,8 +145,6 @@ public class Lexic {
 	/**
 	 * 
 	 * @param search
-	 * @param proximityType
-	 *            l ou L pour Levenschtein, p ou P pour Prefix
 	 * @return
 	 */
 	String[] getPrefixLemme(String search) {
@@ -232,12 +241,12 @@ public class Lexic {
 		search = search.toLowerCase();
 		String[] prefixResults = getPrefixLemme(search);
 		if (prefixResults != null) {
-			System.out.println("Utilisation du prefix");
+			// System.out.println("Utilisation du prefix");
 			return prefixResults;
 		}
 		String[] levenshteinResults = getLevenshteinLemme(search);
 		if (levenshteinResults != null) {
-			System.out.println("Utilisation de levenshtein");
+			// System.out.println("Utilisation de levenshtein");
 			return levenshteinResults;
 		}
 		return null;

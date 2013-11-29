@@ -3,8 +3,6 @@
 # Eclipse files #
 .metadata/*
 */.settings/*
-.project
-.classpath
 
 # Package Files #
 *.jar
