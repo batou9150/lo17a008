@@ -127,10 +127,10 @@ public class Lexic {
 						cout = mainIndex.coutSubstitution;
 					}
 				}
-				distance[i][j] = getMin(distance[i - 1][j]
-						+ mainIndex.coutSuppression, distance[i][j - 1]
-						+ mainIndex.coutInsertion, distance[i - 1][j - 1]
-						+ cout);
+				distance[i][j] = getMin(
+						distance[i - 1][j] + mainIndex.coutSuppression,
+						distance[i][j - 1] + mainIndex.coutInsertion,
+						distance[i - 1][j - 1] + cout);
 			}
 		}
 		// return Math.max(s1.length() , s2.length()) -
