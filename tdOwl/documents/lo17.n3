@@ -1,0 +1,137 @@
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix :        <http://www.owl-ontologies.com/lo17#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+:VoirAussi
+      a       owl:Class ;
+      rdfs:label "voir aussi"@fr .
+
+:hasVoirAussi
+      a       owl:ObjectProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour voir aussi"@fr ;
+      rdfs:range :VoirAussi .
+
+:Rappel
+      a       owl:Class ;
+      rdfs:label "RAPPEL"@fr ;
+      rdfs:subClassOf owl:Thing .
+
+:hasFichier
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour nom de fichier"@fr ;
+      rdfs:range xsd:string .
+
+<http://www.owl-ontologies.com/lo17>
+      a       owl:Ontology ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:Corpus
+      a       owl:Class ;
+      rdfs:comment "Un corpus est un ensemble de pages LCI."@fr ;
+      rdfs:label "CORPUS"@fr ;
+      rdfs:subClassOf owl:Thing .
+
+:hasPageLCI
+      a       owl:ObjectProperty ;
+      rdfs:domain :Corpus ;
+      rdfs:label "a pour page LCI"@fr ;
+      rdfs:range :PageLCI .
+
+:hasAuteur
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :Une , :GrosTitre , :Focus ;
+      rdfs:label "a pour auteur"@fr ;
+      rdfs:range xsd:string .
+
+:hasThemeArticle
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :Rappel , :GrosTitre ;
+      rdfs:label "a pour thème d'article"@fr ;
+      rdfs:range xsd:string .
+
+:hasUne
+      a       owl:ObjectProperty , owl:FunctionalProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour une"@fr ;
+      rdfs:range :Une .
+
+:hasGrosTitre
+      a       owl:ObjectProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour gros titre"@fr ;
+      rdfs:range :GrosTitre .
+
+:hasResumeArticle
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :Une , :GrosTitre , :Focus ;
+      rdfs:label "a pour résumé"@fr ;
+      rdfs:range xsd:string .
+
+:hasURLArticle
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :VoirAussi , :Rappel , :Une , :GrosTitre , :Focus ;
+      rdfs:label "l’url de l’article{@fr}"^^xsd:string ;
+      rdfs:range xsd:string .
+
+:Une  a       owl:Class ;
+      rdfs:label "UNE"@fr .
+
+:hasDatePage
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour date"@fr ;
+      rdfs:range xsd:date .
+
+:hasMailTo
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :Une , :GrosTitre , :Focus ;
+      rdfs:label "a pour mail"@fr ;
+      rdfs:range xsd:string .
+
+:hasFocus
+      a       owl:ObjectProperty , owl:FunctionalProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour focus"@fr ;
+      rdfs:range :Focus .
+
+:hasDateArticle
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :VoirAussi , :Rappel , :Une , :GrosTitre , :Focus ;
+      rdfs:label "a pour date"@fr ;
+      rdfs:range xsd:dateTime .
+
+:PageLCI
+      a       owl:Class ;
+      rdfs:label "Page LCI"@fr ;
+      rdfs:subClassOf owl:Thing .
+
+:hasTitreArticle
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :VoirAussi , :Rappel , :Une , :GrosTitre , :Focus ;
+      rdfs:label "a pour titre"@fr ;
+      rdfs:range xsd:string .
+
+:GrosTitre
+      a       owl:Class ;
+      rdfs:label "a pour gros titre"@fr ;
+      rdfs:subClassOf owl:Thing .
+
+:hasURLImage
+      a       owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdfs:domain :Une , :GrosTitre , :Focus ;
+      rdfs:label "l’url de l’imagette associée à l’article"@fr .
+
+:hasRappel
+      a       owl:ObjectProperty ;
+      rdfs:domain :PageLCI ;
+      rdfs:label "a pour rappel"@fr ;
+      rdfs:range :Rappel .
+
+:Focus
+      a       owl:Class ;
+      rdfs:label "FOCUS"@fr ;
+      rdfs:subClassOf owl:Thing .
