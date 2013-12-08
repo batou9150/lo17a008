@@ -4,3 +4,5 @@ Contains the projects of lo17:
 
 * antlr
 * searchProject
+* interroSQL
+* tdOwl
