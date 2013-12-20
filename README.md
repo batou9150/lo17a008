@@ -4,5 +4,6 @@ Contains the projects of lo17:
 
 * antlr
 * searchProject
+* roquette
 * interroSQL
 * tdOwl
