@@ -7,8 +7,8 @@ import org.antlr.runtime.CommonTokenStream;
 public class TalMain {
 
 	/**
-	 * Point d'entr� du programme Propose � l'utilisateur de saisir une demande
-	 * � traduire en SQL jusqu'a la saisie d'un caract�re sp�ciale.
+	 * Point d'entré du programme Propose à l'utilisateur de saisir une demande
+	 * à traduire en SQL jusqu'a la saisie d'un caractère spéciale.
 	 * 
 	 * @param args
 	 */
@@ -63,12 +63,12 @@ public class TalMain {
 	}
 
 	/**
-	 * Permet de traiter une requ�te dans la language native Et retourne la
-	 * requ�te SQL correspondante
+	 * Permet de traiter une requête dans la language native Et retourne la
+	 * requâte SQL correspondante
 	 * 
 	 * @param s
-	 *            La requ�te dans la language native
-	 * @return La requ�te SQL correspondante
+	 *            La requête dans la language native
+	 * @return La requâte SQL correspondante
 	 */
 	public static String toSQLQuery(String s, Cleaner cleaner) {
 		String result = null;
