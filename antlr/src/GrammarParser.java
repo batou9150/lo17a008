@@ -1,35 +1,33 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 /volsme/users/lo17a008/public_html/ressources/Grammar.g 2013-12-20 15:09:49
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g 2014-01-09 00:23:47
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
 import java.util.ArrayList;
 
 public class GrammarParser extends Parser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "SELECT", "COUNT", "ARTICLE", "PAGE", "RUBRIQUE", "MOT", "PARAITRE", "AUTEUR", "THEME", "TITRE", "VAR_EMAIL", "WS", "POINT", "JOUR", "CONJET", "CONJOU", "MOIS", "ANNEE", "VAR_DATE", "VAR_MOT"
     };
-    public static final int EOF=-1;
-    public static final int SELECT=4;
-    public static final int COUNT=5;
-    public static final int ARTICLE=6;
-    public static final int PAGE=7;
-    public static final int RUBRIQUE=8;
-    public static final int MOT=9;
-    public static final int PARAITRE=10;
-    public static final int AUTEUR=11;
-    public static final int THEME=12;
-    public static final int TITRE=13;
-    public static final int VAR_EMAIL=14;
-    public static final int WS=15;
-    public static final int POINT=16;
-    public static final int JOUR=17;
-    public static final int CONJET=18;
-    public static final int CONJOU=19;
-    public static final int MOIS=20;
-    public static final int ANNEE=21;
-    public static final int VAR_DATE=22;
     public static final int VAR_MOT=23;
+    public static final int CONJOU=19;
+    public static final int ANNEE=21;
+    public static final int POINT=16;
+    public static final int VAR_EMAIL=14;
+    public static final int THEME=12;
+    public static final int PARAITRE=10;
+    public static final int COUNT=5;
+    public static final int EOF=-1;
+    public static final int MOT=9;
+    public static final int AUTEUR=11;
+    public static final int PAGE=7;
+    public static final int WS=15;
+    public static final int RUBRIQUE=8;
+    public static final int JOUR=17;
+    public static final int MOIS=20;
+    public static final int CONJET=18;
+    public static final int VAR_DATE=22;
+    public static final int TITRE=13;
+    public static final int SELECT=4;
+    public static final int ARTICLE=6;
 
     // delegates
     // delegators
@@ -45,12 +43,12 @@ public class GrammarParser extends Parser {
         
 
     public String[] getTokenNames() { return GrammarParser.tokenNames; }
-    public String getGrammarFileName() { return "/volsme/users/lo17a008/public_html/ressources/Grammar.g"; }
+    public String getGrammarFileName() { return "E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g"; }
 
 
 
     // $ANTLR start "listerequetes"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:51:1: listerequetes returns [String sql = \"\"] : r= requete POINT ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:51:1: listerequetes returns [String sql = \"\"] : r= requete POINT ;
     public final String listerequetes() throws RecognitionException {
         String sql =  "";
 
@@ -59,15 +57,15 @@ public class GrammarParser extends Parser {
 
         Arbre lr_arbre;
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:52:25: (r= requete POINT )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:53:3: r= requete POINT
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:52:25: (r= requete POINT )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:53:3: r= requete POINT
             {
-            pushFollow(FOLLOW_requete_in_listerequetes465);
+            pushFollow(FOLLOW_requete_in_listerequetes457);
             r=requete();
 
             state._fsp--;
 
-            match(input,POINT,FOLLOW_POINT_in_listerequetes467); 
+            match(input,POINT,FOLLOW_POINT_in_listerequetes459); 
 
             				lr_arbre = r;
             				sql = lr_arbre.sortArbre();
@@ -88,7 +86,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:61:1: requete returns [Arbre req_arbre = new Arbre(\"\")] : SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)] ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:61:1: requete returns [Arbre req_arbre = new Arbre(\"\")] : SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)] ;
     public final Arbre requete() throws RecognitionException {
         Arbre req_arbre =  new Arbre("");
 
@@ -99,14 +97,14 @@ public class GrammarParser extends Parser {
 
         Arbre ps_arbre; boolean count = false;ArrayList<String> types;int i = 0;
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:62:83: ( SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)] )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:63:3: SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)]
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:62:83: ( SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:63:3: SELECT ( COUNT )? fields= champs sr= sous_requetes[types.get(0)]
             {
-            match(input,SELECT,FOLLOW_SELECT_in_requete495); 
+            match(input,SELECT,FOLLOW_SELECT_in_requete487); 
 
             				req_arbre.ajouteFils(new Arbre("","select distinct"));
             			
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:67:3: ( COUNT )?
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:67:3: ( COUNT )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -115,9 +113,9 @@ public class GrammarParser extends Parser {
             }
             switch (alt1) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:67:4: COUNT
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:67:4: COUNT
                     {
-                    match(input,COUNT,FOLLOW_COUNT_in_requete507); 
+                    match(input,COUNT,FOLLOW_COUNT_in_requete499); 
 
                     				count = true;
                     				req_arbre = new Arbre("");
@@ -129,7 +127,7 @@ public class GrammarParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_champs_in_requete524);
+            pushFollow(FOLLOW_champs_in_requete516);
             fields=champs();
 
             state._fsp--;
@@ -137,7 +135,7 @@ public class GrammarParser extends Parser {
 
             				types = fields;
             			
-            pushFollow(FOLLOW_sous_requetes_in_requete534);
+            pushFollow(FOLLOW_sous_requetes_in_requete526);
             sr=sous_requetes(types.get(0));
 
             state._fsp--;
@@ -175,7 +173,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "champs"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:96:1: champs returns [ArrayList<String> listField = new ArrayList<String>()] : field= champ ( conj field2= champ )* ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:96:1: champs returns [ArrayList<String> listField = new ArrayList<String>()] : field= champ ( conj field2= champ )* ;
     public final ArrayList<String> champs() throws RecognitionException {
         ArrayList<String> listField =  new ArrayList<String>();
 
@@ -185,10 +183,10 @@ public class GrammarParser extends Parser {
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:97:11: (field= champ ( conj field2= champ )* )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:98:2: field= champ ( conj field2= champ )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:97:11: (field= champ ( conj field2= champ )* )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:98:2: field= champ ( conj field2= champ )*
             {
-            pushFollow(FOLLOW_champ_in_champs568);
+            pushFollow(FOLLOW_champ_in_champs560);
             field=champ();
 
             state._fsp--;
@@ -196,7 +194,7 @@ public class GrammarParser extends Parser {
 
             		listField.add(field);
             	
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:101:2: ( conj field2= champ )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:101:2: ( conj field2= champ )*
             loop2:
             do {
                 int alt2=2;
@@ -209,14 +207,14 @@ public class GrammarParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:101:3: conj field2= champ
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:101:3: conj field2= champ
             	    {
-            	    pushFollow(FOLLOW_conj_in_champs574);
+            	    pushFollow(FOLLOW_conj_in_champs566);
             	    conj();
 
             	    state._fsp--;
 
-            	    pushFollow(FOLLOW_champ_in_champs580);
+            	    pushFollow(FOLLOW_champ_in_champs572);
             	    field2=champ();
 
             	    state._fsp--;
@@ -249,12 +247,12 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "champ"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:105:1: champ returns [String type] : ( ARTICLE | PAGE );
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:105:1: champ returns [String type] : ( ARTICLE | PAGE );
     public final String champ() throws RecognitionException {
         String type = null;
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:106:11: ( ARTICLE | PAGE )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:106:11: ( ARTICLE | PAGE )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -272,9 +270,9 @@ public class GrammarParser extends Parser {
             }
             switch (alt3) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:107:2: ARTICLE
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:107:2: ARTICLE
                     {
-                    match(input,ARTICLE,FOLLOW_ARTICLE_in_champ604); 
+                    match(input,ARTICLE,FOLLOW_ARTICLE_in_champ596); 
 
                     		type = "article";
                     	
@@ -282,9 +280,9 @@ public class GrammarParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:110:4: PAGE
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:110:4: PAGE
                     {
-                    match(input,PAGE,FOLLOW_PAGE_in_champ611); 
+                    match(input,PAGE,FOLLOW_PAGE_in_champ603); 
 
                     		type = "page";
                     	
@@ -306,23 +304,23 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "sous_requetes"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:114:1: sous_requetes[String type] returns [Arbre sous_requete_arbres = new Arbre(\"\")] : req= sous_requete (c= conj req2= sous_requete )* ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:114:1: sous_requetes[String type] returns [Arbre sous_requete_arbres = new Arbre(\"\")] : req= sous_requete (c= conj req2= sous_requete )* ;
     public final Arbre sous_requetes(String type) throws RecognitionException {
         Arbre sous_requete_arbres =  new Arbre("");
 
-        Arbre req = null;
+        GrammarParser.sous_requete_return req = null;
 
         Arbre c = null;
 
-        Arbre req2 = null;
+        GrammarParser.sous_requete_return req2 = null;
 
 
         Arbre sr_WHERE = new Arbre("", "WHERE"), sr_FROM = new Arbre("", "FROM");
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:115:85: (req= sous_requete (c= conj req2= sous_requete )* )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:116:2: req= sous_requete (c= conj req2= sous_requete )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:115:85: (req= sous_requete (c= conj req2= sous_requete )* )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:116:2: req= sous_requete (c= conj req2= sous_requete )*
             {
-            pushFollow(FOLLOW_sous_requete_in_sous_requetes640);
+            pushFollow(FOLLOW_sous_requete_in_sous_requetes632);
             req=sous_requete();
 
             state._fsp--;
@@ -330,10 +328,10 @@ public class GrammarParser extends Parser {
 
             		sous_requete_arbres.ajouteFils(sr_FROM);
             		sous_requete_arbres.ajouteFils(sr_WHERE);
-            		sr_FROM.ajouteFils(new Arbre(req.fils.mot));
-            		sr_WHERE.ajouteFils(req.fils.frere);
+            		sr_FROM.ajouteFils(new Arbre(req.sous_requete_arbre.fils.mot));
+            		sr_WHERE.ajouteFils(req.sous_requete_arbre.fils.frere);
             	
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:122:2: (c= conj req2= sous_requete )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:122:2: (c= conj req2= sous_requete )*
             loop4:
             do {
                 int alt4=2;
@@ -346,24 +344,28 @@ public class GrammarParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:122:3: c= conj req2= sous_requete
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:122:3: c= conj req2= sous_requete
             	    {
-            	    pushFollow(FOLLOW_conj_in_sous_requetes650);
+            	    pushFollow(FOLLOW_conj_in_sous_requetes642);
             	    c=conj();
 
             	    state._fsp--;
 
-            	    pushFollow(FOLLOW_sous_requete_in_sous_requetes656);
+            	    pushFollow(FOLLOW_sous_requete_in_sous_requetes648);
             	    req2=sous_requete();
 
             	    state._fsp--;
 
 
             	    		sr_FROM.ajouteFils(new Arbre(","));
-            	    		sr_FROM.ajouteFils(new Arbre(req2.fils.mot));
+            	    		sr_FROM.ajouteFils(new Arbre(req2.sous_requete_arbre.fils.mot));
             	    		sr_WHERE.ajouteFils(c);
-            	    		sr_WHERE.ajouteFils(req2.fils.frere);
-            	    		sr_WHERE.ajouteFils(new Arbre("AND", req.fils.mot + "." + type + " = " + req2.fils.mot + "." + type));
+            	    		sr_WHERE.ajouteFils(req2.sous_requete_arbre.fils.frere);
+            	    		if (req2.type.equals("auteur") || req2.type.equals("date")) {
+            	    			sr_WHERE.ajouteFils(new Arbre("OR", req.sous_requete_arbre.fils.mot + "." + req.type + " = " + req2.sous_requete_arbre.fils.mot + "." + req.type));
+            	    		} else {
+            	    			sr_WHERE.ajouteFils(new Arbre("AND", req.sous_requete_arbre.fils.mot + "." + req.type + " = " + req2.sous_requete_arbre.fils.mot + "." + req.type));
+            	    		}
             	    	
 
             	    }
@@ -388,21 +390,26 @@ public class GrammarParser extends Parser {
     }
     // $ANTLR end "sous_requetes"
 
+    public static class sous_requete_return extends ParserRuleReturnScope {
+        public Arbre sous_requete_arbre = null;
+        public String type = "";
+    };
 
     // $ANTLR start "sous_requete"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:148:1: sous_requete returns [Arbre sous_requete_arbre = null] : (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] ) ;
-    public final Arbre sous_requete() throws RecognitionException {
-        Arbre sous_requete_arbre =  null;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:152:1: sous_requete returns [Arbre sous_requete_arbre = null, String type = \"\"] : (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] | req= requete_rubrique[\"titreresume\"] ) ;
+    public final GrammarParser.sous_requete_return sous_requete() throws RecognitionException {
+        GrammarParser.sous_requete_return retval = new GrammarParser.sous_requete_return();
+        retval.start = input.LT(1);
 
         Arbre req = null;
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:149:12: ( (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] ) )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:150:2: (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:153:12: ( (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] | req= requete_rubrique[\"titreresume\"] ) )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:154:2: (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] | req= requete_rubrique[\"titreresume\"] )
             {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:150:2: (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] )
-            int alt5=5;
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:154:2: (req= requete_auteur | req= requete_article[\"titreresume\"] | req= requete_date | req= requete_theme[\"theme\"] | req= requete_titre[\"titre\"] | req= requete_rubrique[\"titreresume\"] )
+            int alt5=6;
             switch ( input.LA(1) ) {
             case AUTEUR:
                 {
@@ -429,6 +436,11 @@ public class GrammarParser extends Parser {
                 alt5=5;
                 }
                 break;
+            case RUBRIQUE:
+                {
+                alt5=6;
+                }
+                break;
             default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 5, 0, input);
@@ -438,71 +450,91 @@ public class GrammarParser extends Parser {
 
             switch (alt5) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:151:3: req= requete_auteur
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:155:3: req= requete_auteur
                     {
-                    pushFollow(FOLLOW_requete_auteur_in_sous_requete693);
+                    pushFollow(FOLLOW_requete_auteur_in_sous_requete685);
                     req=requete_auteur();
 
                     state._fsp--;
 
 
-                    			sous_requete_arbre = req;
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "auteur";
                     		
 
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:154:3: req= requete_article[\"titreresume\"]
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:159:3: req= requete_article[\"titreresume\"]
                     {
-                    pushFollow(FOLLOW_requete_article_in_sous_requete705);
+                    pushFollow(FOLLOW_requete_article_in_sous_requete697);
                     req=requete_article("titreresume");
 
                     state._fsp--;
 
 
-                    			sous_requete_arbre = req;
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "titre";
                     		
 
                     }
                     break;
                 case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:157:3: req= requete_date
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:163:3: req= requete_date
                     {
-                    pushFollow(FOLLOW_requete_date_in_sous_requete719);
+                    pushFollow(FOLLOW_requete_date_in_sous_requete711);
                     req=requete_date();
 
                     state._fsp--;
 
 
-                    			sous_requete_arbre = req;
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "date";
                     		
 
                     }
                     break;
                 case 4 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:160:3: req= requete_theme[\"theme\"]
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:167:3: req= requete_theme[\"theme\"]
                     {
-                    pushFollow(FOLLOW_requete_theme_in_sous_requete731);
+                    pushFollow(FOLLOW_requete_theme_in_sous_requete723);
                     req=requete_theme("theme");
 
                     state._fsp--;
 
 
-                    			sous_requete_arbre = req;
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "theme";
                     		
 
                     }
                     break;
                 case 5 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:163:3: req= requete_titre[\"titre\"]
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:171:3: req= requete_titre[\"titre\"]
                     {
-                    pushFollow(FOLLOW_requete_titre_in_sous_requete745);
+                    pushFollow(FOLLOW_requete_titre_in_sous_requete737);
                     req=requete_titre("titre");
 
                     state._fsp--;
 
 
-                    			sous_requete_arbre = req;
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "titre";
+                    		
+
+                    }
+                    break;
+                case 6 :
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:175:3: req= requete_rubrique[\"titreresume\"]
+                    {
+                    pushFollow(FOLLOW_requete_rubrique_in_sous_requete751);
+                    req=requete_rubrique("titreresume");
+
+                    state._fsp--;
+
+
+                    			retval.sous_requete_arbre = req;
+                    			retval.type = "rubrique";
                     		
 
                     }
@@ -512,6 +544,8 @@ public class GrammarParser extends Parser {
 
 
             }
+
+            retval.stop = input.LT(-1);
 
         }
         catch (RecognitionException re) {
@@ -520,13 +554,13 @@ public class GrammarParser extends Parser {
         }
         finally {
         }
-        return sous_requete_arbre;
+        return retval;
     }
     // $ANTLR end "sous_requete"
 
 
     // $ANTLR start "params"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:173:1: params[String table] returns [Arbre les_pars_arbre = new Arbre(\"\")] : par1= param[table] (c= conj par2= param[table] )* ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:186:1: params[String table] returns [Arbre les_pars_arbre = new Arbre(\"\")] : par1= param[table] (c= conj par2= param[table] )* ;
     public final Arbre params(String table) throws RecognitionException {
         Arbre les_pars_arbre =  new Arbre("");
 
@@ -539,10 +573,10 @@ public class GrammarParser extends Parser {
 
         Arbre par1_arbre, par2_arbre, conj_arbre;
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:174:52: (par1= param[table] (c= conj par2= param[table] )* )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:175:3: par1= param[table] (c= conj par2= param[table] )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:187:52: (par1= param[table] (c= conj par2= param[table] )* )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:188:3: par1= param[table] (c= conj par2= param[table] )*
             {
-            pushFollow(FOLLOW_param_in_params783);
+            pushFollow(FOLLOW_param_in_params789);
             par1=param(table);
 
             state._fsp--;
@@ -551,7 +585,7 @@ public class GrammarParser extends Parser {
             				par1_arbre = par1;
             				les_pars_arbre.ajouteFils(par1_arbre);
             			
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:180:3: (c= conj par2= param[table] )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:193:3: (c= conj par2= param[table] )*
             loop6:
             do {
                 int alt6=2;
@@ -579,14 +613,14 @@ public class GrammarParser extends Parser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:180:4: c= conj par2= param[table]
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:193:4: c= conj par2= param[table]
             	    {
-            	    pushFollow(FOLLOW_conj_in_params799);
+            	    pushFollow(FOLLOW_conj_in_params805);
             	    c=conj();
 
             	    state._fsp--;
 
-            	    pushFollow(FOLLOW_param_in_params805);
+            	    pushFollow(FOLLOW_param_in_params811);
             	    par2=param(table);
 
             	    state._fsp--;
@@ -622,17 +656,17 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "param"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:191:1: param[String table] returns [ Arbre lepar_arbre = new Arbre(\"\")] : a= VAR_MOT ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:204:1: param[String table] returns [ Arbre lepar_arbre = new Arbre(\"\")] : a= VAR_MOT ;
     public final Arbre param(String table) throws RecognitionException {
         Arbre lepar_arbre =  new Arbre("");
 
         Token a=null;
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:191:67: (a= VAR_MOT )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:192:2: a= VAR_MOT
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:204:67: (a= VAR_MOT )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:205:2: a= VAR_MOT
             {
-            a=(Token)match(input,VAR_MOT,FOLLOW_VAR_MOT_in_param838); 
+            a=(Token)match(input,VAR_MOT,FOLLOW_VAR_MOT_in_param844); 
              lepar_arbre.ajouteFils(new Arbre(table + ".mot like ", "'%"+a.getText()+"%'"));
 
             }
@@ -650,7 +684,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "emails"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:196:1: emails returns [Arbre emails_arbre = new Arbre(\"\")] : email1= email (c= conj email2= email )* ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:209:1: emails returns [Arbre emails_arbre = new Arbre(\"\")] : email1= email (c= conj email2= email )* ;
     public final Arbre emails() throws RecognitionException {
         Arbre emails_arbre =  new Arbre("");
 
@@ -663,10 +697,10 @@ public class GrammarParser extends Parser {
 
         Arbre email1_arbre, email2_arbre, conj_arbre;
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:197:56: (email1= email (c= conj email2= email )* )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:198:2: email1= email (c= conj email2= email )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:210:56: (email1= email (c= conj email2= email )* )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:211:2: email1= email (c= conj email2= email )*
             {
-            pushFollow(FOLLOW_email_in_emails868);
+            pushFollow(FOLLOW_email_in_emails874);
             email1=email();
 
             state._fsp--;
@@ -675,7 +709,7 @@ public class GrammarParser extends Parser {
             			email1_arbre = email1;
             			emails_arbre.ajouteFils(email1_arbre);
             		
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:203:2: (c= conj email2= email )*
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:216:2: (c= conj email2= email )*
             loop7:
             do {
                 int alt7=2;
@@ -703,14 +737,14 @@ public class GrammarParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:203:3: c= conj email2= email
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:216:3: c= conj email2= email
             	    {
-            	    pushFollow(FOLLOW_conj_in_emails880);
+            	    pushFollow(FOLLOW_conj_in_emails886);
             	    c=conj();
 
             	    state._fsp--;
 
-            	    pushFollow(FOLLOW_email_in_emails886);
+            	    pushFollow(FOLLOW_email_in_emails892);
             	    email2=email();
 
             	    state._fsp--;
@@ -746,17 +780,17 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "email"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:213:1: email returns [Arbre email_arbre = new Arbre(\"\")] : a= VAR_EMAIL ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:226:1: email returns [Arbre email_arbre = new Arbre(\"\")] : a= VAR_EMAIL ;
     public final Arbre email() throws RecognitionException {
         Arbre email_arbre =  new Arbre("");
 
         Token a=null;
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:214:11: (a= VAR_EMAIL )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:215:2: a= VAR_EMAIL
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:227:11: (a= VAR_EMAIL )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:228:2: a= VAR_EMAIL
             {
-            a=(Token)match(input,VAR_EMAIL,FOLLOW_VAR_EMAIL_in_email919); 
+            a=(Token)match(input,VAR_EMAIL,FOLLOW_VAR_EMAIL_in_email925); 
 
             			email_arbre.ajouteFils(new Arbre("email like ", "'%"+a.getText()+"%'"));
             		
@@ -776,7 +810,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete_auteur"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:221:1: requete_auteur returns [Arbre auteur_arbre = new Arbre(\"\")] : AUTEUR emailz= emails ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:234:1: requete_auteur returns [Arbre auteur_arbre = new Arbre(\"\")] : AUTEUR emailz= emails ;
     public final Arbre requete_auteur() throws RecognitionException {
         Arbre auteur_arbre =  new Arbre("");
 
@@ -784,14 +818,14 @@ public class GrammarParser extends Parser {
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:222:11: ( AUTEUR emailz= emails )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:223:2: AUTEUR emailz= emails
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:235:11: ( AUTEUR emailz= emails )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:236:2: AUTEUR emailz= emails
             {
-            match(input,AUTEUR,FOLLOW_AUTEUR_in_requete_auteur944); 
+            match(input,AUTEUR,FOLLOW_AUTEUR_in_requete_auteur950); 
 
             		auteur_arbre.ajouteFils(new Arbre("FROM", "email"));
             	
-            pushFollow(FOLLOW_emails_in_requete_auteur953);
+            pushFollow(FOLLOW_emails_in_requete_auteur959);
             emailz=emails();
 
             state._fsp--;
@@ -815,7 +849,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete_article"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:231:1: requete_article[String table] returns [Arbre article_arbre = new Arbre(\"\")] : MOT paramz= params[table] ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:244:1: requete_article[String table] returns [Arbre article_arbre = new Arbre(\"\")] : MOT paramz= params[table] ;
     public final Arbre requete_article(String table) throws RecognitionException {
         Arbre article_arbre =  new Arbre("");
 
@@ -823,14 +857,14 @@ public class GrammarParser extends Parser {
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:232:11: ( MOT paramz= params[table] )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:233:2: MOT paramz= params[table]
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:245:11: ( MOT paramz= params[table] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:246:2: MOT paramz= params[table]
             {
-            match(input,MOT,FOLLOW_MOT_in_requete_article978); 
+            match(input,MOT,FOLLOW_MOT_in_requete_article984); 
 
             		article_arbre.ajouteFils(new Arbre("FROM", "titreresume"));
             	
-            pushFollow(FOLLOW_params_in_requete_article987);
+            pushFollow(FOLLOW_params_in_requete_article993);
             paramz=params(table);
 
             state._fsp--;
@@ -854,21 +888,21 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete_date"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:241:1: requete_date returns [Arbre date_arbre = new Arbre(\"\")] : PARAITRE date= VAR_DATE ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:254:1: requete_date returns [Arbre date_arbre = new Arbre(\"\")] : PARAITRE date= VAR_DATE ;
     public final Arbre requete_date() throws RecognitionException {
         Arbre date_arbre =  new Arbre("");
 
         Token date=null;
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:242:12: ( PARAITRE date= VAR_DATE )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:243:2: PARAITRE date= VAR_DATE
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:255:12: ( PARAITRE date= VAR_DATE )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:256:2: PARAITRE date= VAR_DATE
             {
-            match(input,PARAITRE,FOLLOW_PARAITRE_in_requete_date1013); 
+            match(input,PARAITRE,FOLLOW_PARAITRE_in_requete_date1019); 
 
             		date_arbre.ajouteFils(new Arbre("FROM", "datearticle"));
             	
-            date=(Token)match(input,VAR_DATE,FOLLOW_VAR_DATE_in_requete_date1022); 
+            date=(Token)match(input,VAR_DATE,FOLLOW_VAR_DATE_in_requete_date1028); 
 
             		date_arbre.ajouteFils(new Arbre("jj || ' ' || mois || ' ' || annee like", "'%" + date.getText() + "%'"));
             	
@@ -888,7 +922,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete_theme"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:251:1: requete_theme[String table] returns [Arbre theme_arbre = new Arbre(\"\")] : THEME theme= params[table] ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:264:1: requete_theme[String table] returns [Arbre theme_arbre = new Arbre(\"\")] : THEME theme= params[table] ;
     public final Arbre requete_theme(String table) throws RecognitionException {
         Arbre theme_arbre =  new Arbre("");
 
@@ -896,14 +930,14 @@ public class GrammarParser extends Parser {
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:252:12: ( THEME theme= params[table] )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:253:2: THEME theme= params[table]
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:265:12: ( THEME theme= params[table] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:266:2: THEME theme= params[table]
             {
-            match(input,THEME,FOLLOW_THEME_in_requete_theme1048); 
+            match(input,THEME,FOLLOW_THEME_in_requete_theme1054); 
 
             		theme_arbre.ajouteFils(new Arbre("FROM", "theme"));
             	
-            pushFollow(FOLLOW_params_in_requete_theme1057);
+            pushFollow(FOLLOW_params_in_requete_theme1063);
             theme=params(table);
 
             state._fsp--;
@@ -927,7 +961,7 @@ public class GrammarParser extends Parser {
 
 
     // $ANTLR start "requete_titre"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:261:1: requete_titre[String table] returns [Arbre titre_arbre = new Arbre(\"\")] : TITRE titre= params[table] ;
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:274:1: requete_titre[String table] returns [Arbre titre_arbre = new Arbre(\"\")] : TITRE titre= params[table] ;
     public final Arbre requete_titre(String table) throws RecognitionException {
         Arbre titre_arbre =  new Arbre("");
 
@@ -935,14 +969,14 @@ public class GrammarParser extends Parser {
 
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:262:12: ( TITRE titre= params[table] )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:263:2: TITRE titre= params[table]
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:275:12: ( TITRE titre= params[table] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:276:2: TITRE titre= params[table]
             {
-            match(input,TITRE,FOLLOW_TITRE_in_requete_titre1085); 
+            match(input,TITRE,FOLLOW_TITRE_in_requete_titre1091); 
 
             		titre_arbre.ajouteFils(new Arbre("FROM", "titre"));
             	
-            pushFollow(FOLLOW_params_in_requete_titre1094);
+            pushFollow(FOLLOW_params_in_requete_titre1100);
             titre=params(table);
 
             state._fsp--;
@@ -965,13 +999,52 @@ public class GrammarParser extends Parser {
     // $ANTLR end "requete_titre"
 
 
+    // $ANTLR start "requete_rubrique"
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:284:1: requete_rubrique[String table] returns [Arbre rubrique_arbre = new Arbre(\"\")] : RUBRIQUE rubrique= params[table] ;
+    public final Arbre requete_rubrique(String table) throws RecognitionException {
+        Arbre rubrique_arbre =  new Arbre("");
+
+        Arbre rubrique = null;
+
+
+        try {
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:285:11: ( RUBRIQUE rubrique= params[table] )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:286:2: RUBRIQUE rubrique= params[table]
+            {
+            match(input,RUBRIQUE,FOLLOW_RUBRIQUE_in_requete_rubrique1126); 
+
+            		rubrique_arbre.ajouteFils(new Arbre("FROM", "titreresume"));
+            	
+            pushFollow(FOLLOW_params_in_requete_rubrique1135);
+            rubrique=params(table);
+
+            state._fsp--;
+
+
+            		rubrique_arbre.ajouteFils(rubrique);
+            	
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return rubrique_arbre;
+    }
+    // $ANTLR end "requete_rubrique"
+
+
     // $ANTLR start "conj"
-    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:271:1: conj returns [Arbre conj_arbre = new Arbre(\"\")] : ( CONJET | CONJOU );
+    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:294:1: conj returns [Arbre conj_arbre = new Arbre(\"\")] : ( CONJET | CONJOU );
     public final Arbre conj() throws RecognitionException {
         Arbre conj_arbre =  new Arbre("");
 
         try {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:271:49: ( CONJET | CONJOU )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:294:49: ( CONJET | CONJOU )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -989,9 +1062,9 @@ public class GrammarParser extends Parser {
             }
             switch (alt8) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:272:2: CONJET
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:295:2: CONJET
                     {
-                    match(input,CONJET,FOLLOW_CONJET_in_conj1112); 
+                    match(input,CONJET,FOLLOW_CONJET_in_conj1155); 
 
                     		conj_arbre.ajouteFils(new Arbre("", "AND"));
                     	
@@ -999,9 +1072,9 @@ public class GrammarParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:275:2: CONJOU
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:298:2: CONJOU
                     {
-                    match(input,CONJOU,FOLLOW_CONJOU_in_conj1119); 
+                    match(input,CONJOU,FOLLOW_CONJOU_in_conj1162); 
 
                     		conj_arbre.ajouteFils( new Arbre("", "OR"));
                     	
@@ -1026,44 +1099,47 @@ public class GrammarParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_requete_in_listerequetes465 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_POINT_in_listerequetes467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SELECT_in_requete495 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_COUNT_in_requete507 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_champs_in_requete524 = new BitSet(new long[]{0x0000000000003E00L});
-    public static final BitSet FOLLOW_sous_requetes_in_requete534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_champ_in_champs568 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_conj_in_champs574 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_champ_in_champs580 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_ARTICLE_in_champ604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAGE_in_champ611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_sous_requete_in_sous_requetes640 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_conj_in_sous_requetes650 = new BitSet(new long[]{0x0000000000003E00L});
-    public static final BitSet FOLLOW_sous_requete_in_sous_requetes656 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_requete_auteur_in_sous_requete693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_requete_article_in_sous_requete705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_requete_date_in_sous_requete719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_requete_theme_in_sous_requete731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_requete_titre_in_sous_requete745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_params783 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_conj_in_params799 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_param_in_params805 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_VAR_MOT_in_param838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_email_in_emails868 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_conj_in_emails880 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_email_in_emails886 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_VAR_EMAIL_in_email919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AUTEUR_in_requete_auteur944 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_emails_in_requete_auteur953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOT_in_requete_article978 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_params_in_requete_article987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAITRE_in_requete_date1013 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_VAR_DATE_in_requete_date1022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THEME_in_requete_theme1048 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_params_in_requete_theme1057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TITRE_in_requete_titre1085 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_params_in_requete_titre1094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONJET_in_conj1112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONJOU_in_conj1119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_in_listerequetes457 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_POINT_in_listerequetes459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SELECT_in_requete487 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_COUNT_in_requete499 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_champs_in_requete516 = new BitSet(new long[]{0x0000000000003F00L});
+    public static final BitSet FOLLOW_sous_requetes_in_requete526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_champ_in_champs560 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_conj_in_champs566 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_champ_in_champs572 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_ARTICLE_in_champ596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAGE_in_champ603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_sous_requete_in_sous_requetes632 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_conj_in_sous_requetes642 = new BitSet(new long[]{0x0000000000003F00L});
+    public static final BitSet FOLLOW_sous_requete_in_sous_requetes648 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_requete_auteur_in_sous_requete685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_article_in_sous_requete697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_date_in_sous_requete711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_theme_in_sous_requete723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_titre_in_sous_requete737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_requete_rubrique_in_sous_requete751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_params789 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_conj_in_params805 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_param_in_params811 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_VAR_MOT_in_param844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_email_in_emails874 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_conj_in_emails886 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_email_in_emails892 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_VAR_EMAIL_in_email925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AUTEUR_in_requete_auteur950 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_emails_in_requete_auteur959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOT_in_requete_article984 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_params_in_requete_article993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAITRE_in_requete_date1019 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_VAR_DATE_in_requete_date1028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THEME_in_requete_theme1054 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_params_in_requete_theme1063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TITRE_in_requete_titre1091 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_params_in_requete_titre1100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RUBRIQUE_in_requete_rubrique1126 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_params_in_requete_rubrique1135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONJET_in_conj1155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONJOU_in_conj1162 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
 import java.io.EOFException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -28,7 +30,13 @@ public class Cleaner {
 			try {
 				String[] splittedString;
 				// Loading lemmes
-				br = new BufferedReader(new FileReader("../antlr/ressources/lemme.txt"));
+				URL u = new URL(
+						"http://tuxa.sme.utc/~lo17a008/ressources/lemme.txt");	
+				URLConnection uc = u.openConnection();
+				InputStream is = uc.getInputStream();
+				InputStreamReader isr = new InputStreamReader(is);
+				br = new BufferedReader(isr);
+
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split("\t");
 					if (splittedString.length == 2) {
@@ -39,8 +47,13 @@ public class Cleaner {
 				br.close();
 
 				// Loading advancedLemme
-				br = new BufferedReader(new FileReader(
-						"../antlr/ressources/advancedLemme.txt"));
+				u = new URL(
+						"http://tuxa.sme.utc/~lo17a008/ressources/advancedLemme.txt");
+				uc = u.openConnection();
+				is = uc.getInputStream();
+				isr = new InputStreamReader(is);
+				br = new BufferedReader(isr);
+
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split("\t");
 					if (splittedString.length == 2) {
@@ -52,8 +65,13 @@ public class Cleaner {
 				br.close();
 
 				// Loading the stoplist
-				br = new BufferedReader(new FileReader(
-						"../antlr/ressources/stoplist.txt"));
+				u = new URL(
+						"http://tuxa.sme.utc/~lo17a008/ressources/stoplist.txt");
+				uc = u.openConnection();
+				is = uc.getInputStream();
+				isr = new InputStreamReader(is);
+				br = new BufferedReader(isr);
+				
 				while ((chaine = br.readLine()) != null) {
 					stoplist.add(Utils.removeAccents(chaine));
 				}
@@ -61,10 +79,8 @@ public class Cleaner {
 			} catch (EOFException e) {
 				br.close();
 			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable");
 		} catch (IOException e) {
-			System.out.println("IO Exception");
+			System.out.println("Cleaner - IO Exception");
 		}
 	}
 
@@ -127,16 +143,28 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
-		s = applyStoplist(Utils.deleteOneLetter(s.toLowerCase()));
-		/*String[] result = lexic.search(s);
-		if (result != null && result.length > 0) {
-			s = result[0];
+		s = s.replaceAll("( )+", " ");
+		s = s.replaceAll("'", " ");
+		s = Utils.removeAccents(s);
+		s = Utils.deleteOneLetter(s.toLowerCase());
+		String[] split = s.split(" ");
+		int i = 0;
+		for(String n : split) {
+			String[] result = lexic.search(n);
+			if (result != null && result.length > 0) {
+				split[i] = result[0];
+			}
+			i++;
 		}
-		*/
+		s = "";
+		for (String n : split) {
+			s = s + n + " ";
+		}
+		System.out.println("Après correction orthographique  : \"" + s + "\"");
+		s = s.trim();
+		s = applyStoplist(s);
 		s = applyLemme(s);
-		// System.out.println(s);
 		s = applyAdvancedLemme(s);
-		// System.out.println(s);
 		s = s.replaceAll("[\\{\\}]", "");
 		s = Utils.removeAccents(s);
 		return s;

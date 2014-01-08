@@ -18,7 +18,7 @@ public class interrogPostgresql {
 		do {
 			System.out.print("Texte : ");
 			requeteLN = scanner.nextLine();
-			String requete = TalMain.toSQLQuery(requeteLN, cleaner);
+			String requete = AntlrMain.toSQLQuery(requeteLN, cleaner);
 
 			System.out.println(requete);
 			

@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
 import java.io.EOFException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
@@ -10,46 +12,22 @@ import java.util.Set;
 public class Lexic {
 
 	Hashtable<String, String> lemme;
-	Integer prefixCountLimit = 10;
-	Integer seuilPrefix = 3;
-	Integer seuilDistanceLevenshtein = 6;
 	Hashtable<String, String> proximityKeyboard = new Hashtable<String, String>();
 
 	Lexic() {
-		proximityKeyboard.put("a", "zq");
-		proximityKeyboard.put("z", "asqde");
-		proximityKeyboard.put("e", "zsdfr");
-		proximityKeyboard.put("r", "edfgt");
-		proximityKeyboard.put("t", "ryfgh");
-		proximityKeyboard.put("y", "tujgh");
-		proximityKeyboard.put("u", "yihjk");
-		proximityKeyboard.put("i", "uojkl");
-		proximityKeyboard.put("o", "ipklm\"");
-		proximityKeyboard.put("p", "o^lmà%)");
-		proximityKeyboard.put("q", "azsw<>");
-		proximityKeyboard.put("s", "qdzewx");
-		proximityKeyboard.put("d", "sferxc");
-		proximityKeyboard.put("f", "gdrtcv");
-		proximityKeyboard.put("g", "fhtyvb");
-		proximityKeyboard.put("h", "gjbnyu");
-		proximityKeyboard.put("j", "hkui,n?");
-		proximityKeyboard.put("k", "jlio,;?.");
-		proximityKeyboard.put("l", "kmop;:./");
-		proximityKeyboard.put("m", "lù%p^:/!§");
-		proximityKeyboard.put("w", "<>xqs");
-		proximityKeyboard.put("x", "wsdc");
-		proximityKeyboard.put("c", "xvfd");
-		proximityKeyboard.put("v", "bcfg");
-		proximityKeyboard.put("b", "vngh");
-		proximityKeyboard.put("n", "b,?hj");
+		initProximityKeyboard();
 
 		lemme = new Hashtable<String, String>();
 		BufferedReader br = null;
 		String chaine;
 		try {
 			try {
-				br = new BufferedReader(new FileReader(
-						"../searchProject/ressources/lexiqueFull.txt"));
+				URL u = new URL(
+						"http://tuxa.sme.utc/~lo17a008/ressources/lexiqueFull.txt");
+				URLConnection uc = u.openConnection();
+				InputStream is = uc.getInputStream();
+				InputStreamReader isr = new InputStreamReader(is);
+				br = new BufferedReader(isr);
 				String[] splittedString;
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split(" \t");
@@ -59,10 +37,8 @@ public class Lexic {
 			} catch (EOFException e) {
 				br.close();
 			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable");
 		} catch (IOException e) {
-			System.out.println("IO Exception");
+			System.out.println("Lexic - IO Exception");
 		}
 	}
 
@@ -80,9 +56,9 @@ public class Lexic {
 	 * @return The proximity of the two strings
 	 */
 	Integer getPrefixProximity(String s1, String s2) {
-		if (s1.length() < seuilPrefix || s2.length() < seuilPrefix) {
+		if (s1.length() < Utils.seuilPrefix || s2.length() < Utils.seuilPrefix) {
 			return 0; // Chaines trop petites
-		} else if (s1.length() - s2.length() > seuilPrefix) {
+		} else if (s1.length() - s2.length() > Utils.seuilPrefix) {
 			return 0; // Chaines trop différentes
 		} else {
 			int i = 0;
@@ -106,35 +82,25 @@ public class Lexic {
 		for (i = 1; i < s1.length() + 1; i++) {
 			for (j = 1; j < s2.length() + 1; j++) {
 				if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-					String tmp = proximityKeyboard.get(String.valueOf(s1
-							.charAt(i - 1)));
-					if (tmp == null || (tmp != null && tmp.isEmpty())) {
-						// System.out.println(String.valueOf(s1.charAt(i - 1)) +
-						// " NOT FOUND");
-						cout = mainIndex.coutSubstitution / 3;
-					} else if (s1.length() != i
-							&& tmp.indexOf(String.valueOf(s1.charAt(i))) != -1) {
-						cout = 0;
-					} else {
-						cout = mainIndex.coutSubstitution / 3;
-					}
+					cout = 0;
 				} else {
-					if (s1.length() != i && s2.length() != j
+					if (i > 1 && j > 1 && s1.charAt(i - 2) == s2.charAt(j - 1)
+							&& s1.charAt(i - 1) == s2.charAt(j - 2)) {
+						cout = Utils.coutInversion;
+					} else if (s1.length() >= i + 1 && s2.length() >= j + 1
 							&& s1.charAt(i - 1) == s2.charAt(j)
 							&& s1.charAt(i) == s2.charAt(j - 1)) {
-						cout = mainIndex.coutInversion;
+						cout = Utils.coutInversion;
 					} else {
-						cout = mainIndex.coutSubstitution;
+						cout = Utils.coutSubstitution;
 					}
 				}
-				distance[i][j] = getMin(
-						distance[i - 1][j] + mainIndex.coutSuppression,
-						distance[i][j - 1] + mainIndex.coutInsertion,
-						distance[i - 1][j - 1] + cout);
+				distance[i][j] = getMin(distance[i - 1][j]
+						+ Utils.coutSuppression, distance[i][j - 1]
+						+ Utils.coutInsertion, distance[i - 1][j - 1]
+						+ cout);
 			}
 		}
-		// return Math.max(s1.length() , s2.length()) -
-		// distance[s1.length()][s2.length()];
 		return distance[s1.length()][s2.length()];
 	}
 
@@ -143,6 +109,7 @@ public class Lexic {
 	}
 
 	/**
+	 * getPrefixLemme
 	 * 
 	 * @param search
 	 * @return
@@ -153,7 +120,7 @@ public class Lexic {
 		for (String n : lemme.keySet()) {
 			Integer i = 0;
 			i = getPrefixProximity(search, n);
-			if (i > seuilPrefix) {
+			if (i > Utils.seuilPrefix) {
 				if (!tempList.containsKey(lemme.get(n))) {
 					tempList.put(lemme.get(n), i);
 				} else if (tempList.get(lemme.get(n)) < i) {
@@ -161,7 +128,7 @@ public class Lexic {
 				}
 			}
 		}
-		// Tri à  bulle
+		// Tri Ã  bulle
 		Set<String> keys = tempList.keySet();
 		Collection<Integer> values = tempList.values();
 		Object[] keysArray = keys.toArray();
@@ -184,9 +151,9 @@ public class Lexic {
 			}
 		} while (flag);
 		if (keysArray.length > 0) {
-			String[] returnList = new String[Math.min(prefixCountLimit,
+			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;
@@ -200,11 +167,11 @@ public class Lexic {
 		for (String n : lemme.keySet()) {
 			Integer i = 0;
 			i = getLevenshteinProximity(search, n);
-			if (i <= seuilDistanceLevenshtein) {
+			if (i <= Utils.seuilDistanceLevenshtein) {
 				tempList.put(lemme.get(n), i);
 			}
 		}
-		// Tri à  bulle
+		// Tri Ã  bulle
 		Set<String> keys = tempList.keySet();
 		Collection<Integer> values = tempList.values();
 		Object[] keysArray = keys.toArray();
@@ -227,9 +194,9 @@ public class Lexic {
 			}
 		} while (flag);
 		if (keysArray.length > 0) {
-			String[] returnList = new String[Math.min(prefixCountLimit,
+			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;
@@ -245,10 +212,40 @@ public class Lexic {
 			return prefixResults;
 		}
 		String[] levenshteinResults = getLevenshteinLemme(search);
+
 		if (levenshteinResults != null) {
 			// System.out.println("Utilisation de levenshtein");
 			return levenshteinResults;
 		}
 		return null;
+	}
+
+	private void initProximityKeyboard() {
+		proximityKeyboard.put("a", "zq");
+		proximityKeyboard.put("z", "asqde");
+		proximityKeyboard.put("e", "zsdfr");
+		proximityKeyboard.put("r", "edfgt");
+		proximityKeyboard.put("t", "ryfgh");
+		proximityKeyboard.put("y", "tujgh");
+		proximityKeyboard.put("u", "yihjk");
+		proximityKeyboard.put("i", "uojkl");
+		proximityKeyboard.put("o", "ipklm\"");
+		proximityKeyboard.put("p", "o^lmù%à@)])");
+		proximityKeyboard.put("q", "azsw<>");
+		proximityKeyboard.put("s", "qdzewx");
+		proximityKeyboard.put("d", "sferxc");
+		proximityKeyboard.put("f", "gdrtcv");
+		proximityKeyboard.put("g", "fhtyvb");
+		proximityKeyboard.put("h", "gjbnyu");
+		proximityKeyboard.put("j", "hkui,n?");
+		proximityKeyboard.put("k", "jlio,;?.");
+		proximityKeyboard.put("l", "kmop;:./");
+		proximityKeyboard.put("m", "lopù%;:!./§^¨");
+		proximityKeyboard.put("w", "<>xqs");
+		proximityKeyboard.put("x", "wsdc");
+		proximityKeyboard.put("c", "xvfd");
+		proximityKeyboard.put("v", "bcfg");
+		proximityKeyboard.put("b", "vngh");
+		proximityKeyboard.put("n", "b,?hj");
 	}
 }

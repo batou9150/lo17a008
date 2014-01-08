@@ -1,14 +1,13 @@
 import java.io.*;
 import java.util.Scanner;
-//import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-public class TalMain {
+public class AntlrMain {
 
 	/**
-	 * Point d'entrÃ© du programme Propose Ã  l'utilisateur de saisir une demande
-	 * Ã  traduire en SQL jusqu'a la saisie d'un caractÃ¨re spÃ©ciale.
+	 * Point d'entré du programme Propose à l'utilisateur de saisir une demande
+	 * à traduire en SQL jusqu'a la saisie d'un caractère spéciale.
 	 * 
 	 * @param args
 	 */
@@ -16,8 +15,6 @@ public class TalMain {
 		Scanner scanner = new Scanner(System.in);
 		Lexic lexic = new Lexic();
 		Cleaner cleaner = new Cleaner(lexic);
-
-		// test(cleaner); // Test tout le corpus de questions
 
 		String s;
 		do {
@@ -55,26 +52,25 @@ public class TalMain {
 				br.close();
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable");
+			System.out.println("AntlrMain - Fichier introuvable");
 		} catch (IOException e) {
-			System.out.println("IO Exception");
+			System.out.println("AntlrMain - IO Exception");
 		}
 		System.out.println(100 * countOK / countAll);
 	}
 
 	/**
-	 * Permet de traiter une requÃªte dans la language native Et retourne la
-	 * requÃ¢te SQL correspondante
+	 * Permet de traiter une requête dans la language native Et retourne la
+	 * requâte SQL correspondante
 	 * 
 	 * @param s
-	 *            La requÃªte dans la language native
-	 * @return La requÃ¢te SQL correspondante
+	 *            La requête dans la language native
+	 * @return La requâte SQL correspondante
 	 */
 	public static String toSQLQuery(String s, Cleaner cleaner) {
 		String result = null;
 
 		s = cleaner.cleanString(s);
-		// System.out.println(s);
 
 		try {
 			GrammarLexer lexer = new GrammarLexer(new ANTLRReaderStream(

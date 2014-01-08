@@ -1,12 +1,21 @@
 public class Utils {
+	static int coutInsertion = 3;
+	static int coutSuppression = 4;
+	static int coutSubstitution = 3;
+	static int coutInversion = 1;
+	
+	static Integer prefixCountLimit = 10;
+	
+	static Integer seuilPrefix = 3;
+	static Integer seuilDistanceLevenshtein = 6;
 
 	static String removeAccents(String s) {
-		s = s.replaceAll("[Ã ]", "a");
-		s = s.replaceAll("[Ã©Ã¨Ã«Ãª]", "e");
-		s = s.replaceAll("[Ã®Ã¯]", "i");
-		s = s.replaceAll("[Ã¶Ã´]", "o");
-		s = s.replaceAll("[Ã¹]", "u");
-		s = s.replaceAll("[Ã§]", "c");
+		s = s.replaceAll("[à]", "a");
+		s = s.replaceAll("[éèëê]", "e");
+		s = s.replaceAll("[îï]", "i");
+		s = s.replaceAll("[öô]", "o");
+		s = s.replaceAll("[ù]", "u");
+		s = s.replaceAll("[ç]", "c");
 		return s;
 	}
 
@@ -31,5 +40,4 @@ public class Utils {
 		s = s.replaceAll("^[a-z]$", "");
 		return s;
 	}
-
 }

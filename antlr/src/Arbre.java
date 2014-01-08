@@ -52,30 +52,4 @@ class Arbre {
 		}
 		return arbre;
 	}
-
-	private void afficheCatAvecNl() {
-		System.out.print(categorie + " ");
-		System.out.print(mot + " ");
-		if (fils != null) {
-			System.out.print(" ( ");
-			fils.afficheCatAvecNl();
-			System.out.print(") ");
-		}
-		if (frere != null) {
-			frere.afficheCatAvecNl();
-		}
-	}
-
-	private void afficheCatSansNl() {
-		System.out.print(categorie + " ");
-		if (fils != null) {
-			System.out.print(" ( ");
-			fils.afficheCatSansNl();
-			System.out.print(") ");
-		}
-		if (frere != null) {
-			frere.afficheCatSansNl();
-		}
-	}
-
 }
