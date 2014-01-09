@@ -5,6 +5,9 @@ import javax.servlet.http.*;
 import java.sql.*;
 
 public class LanceRequete extends HttpServlet {
+
+	private static final long serialVersionUID = -7593848046688416193L;
+	
 	String username;
 	String password;
 	String url;

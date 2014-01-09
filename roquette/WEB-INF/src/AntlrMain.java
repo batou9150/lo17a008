@@ -1,10 +1,9 @@
 import java.io.*;
 import java.util.Scanner;
-//import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-public class TalMain {
+public class AntlrMain {
 
 	/**
 	 * Point d'entr� du programme Propose � l'utilisateur de saisir une demande
@@ -16,8 +15,6 @@ public class TalMain {
 		Scanner scanner = new Scanner(System.in);
 		Lexic lexic = new Lexic();
 		Cleaner cleaner = new Cleaner(lexic);
-
-		// test(cleaner); // Test tout le corpus de questions
 
 		String s;
 		do {
@@ -55,9 +52,9 @@ public class TalMain {
 				br.close();
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable");
+			System.out.println("AntlrMain - Fichier introuvable");
 		} catch (IOException e) {
-			System.out.println("IO Exception");
+			System.out.println("AntlrMain - IO Exception");
 		}
 		System.out.println(100 * countOK / countAll);
 	}
@@ -74,7 +71,6 @@ public class TalMain {
 		String result = null;
 
 		s = cleaner.cleanString(s);
-		// System.out.println(s);
 
 		try {
 			GrammarLexer lexer = new GrammarLexer(new ANTLRReaderStream(

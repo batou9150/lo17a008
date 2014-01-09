@@ -1,32 +1,29 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 /volsme/users/lo17a008/public_html/ressources/Grammar.g 2013-12-20 15:09:49
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g 2014-01-09 00:23:47
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 public class GrammarLexer extends Lexer {
-    public static final int EOF=-1;
-    public static final int SELECT=4;
-    public static final int COUNT=5;
-    public static final int ARTICLE=6;
-    public static final int PAGE=7;
-    public static final int RUBRIQUE=8;
-    public static final int MOT=9;
-    public static final int PARAITRE=10;
-    public static final int AUTEUR=11;
-    public static final int THEME=12;
-    public static final int TITRE=13;
-    public static final int VAR_EMAIL=14;
-    public static final int WS=15;
-    public static final int POINT=16;
-    public static final int JOUR=17;
-    public static final int CONJET=18;
-    public static final int CONJOU=19;
-    public static final int MOIS=20;
-    public static final int ANNEE=21;
-    public static final int VAR_DATE=22;
     public static final int VAR_MOT=23;
+    public static final int CONJOU=19;
+    public static final int ANNEE=21;
+    public static final int POINT=16;
+    public static final int VAR_EMAIL=14;
+    public static final int THEME=12;
+    public static final int PARAITRE=10;
+    public static final int COUNT=5;
+    public static final int EOF=-1;
+    public static final int MOT=9;
+    public static final int AUTEUR=11;
+    public static final int PAGE=7;
+    public static final int WS=15;
+    public static final int RUBRIQUE=8;
+    public static final int JOUR=17;
+    public static final int MOIS=20;
+    public static final int CONJET=18;
+    public static final int TITRE=13;
+    public static final int VAR_DATE=22;
+    public static final int SELECT=4;
+    public static final int ARTICLE=6;
 
     // delegates
     // delegators
@@ -39,14 +36,14 @@ public class GrammarLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "/volsme/users/lo17a008/public_html/ressources/Grammar.g"; }
+    public String getGrammarFileName() { return "E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g"; }
 
     // $ANTLR start "SELECT"
     public final void mSELECT() throws RecognitionException {
         try {
             int _type = SELECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:4:8: ( 'vouloir' | 'retourner' | 'donner' | 'souhaiter' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:4:8: ( 'vouloir' | 'retourner' | 'donner' | 'souhaiter' )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 'v':
@@ -78,7 +75,7 @@ public class GrammarLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:4:10: 'vouloir'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:4:10: 'vouloir'
                     {
                     match("vouloir"); 
 
@@ -86,7 +83,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:4:20: 'retourner'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:4:20: 'retourner'
                     {
                     match("retourner"); 
 
@@ -94,7 +91,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:4:32: 'donner'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:4:32: 'donner'
                     {
                     match("donner"); 
 
@@ -102,7 +99,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:4:41: 'souhaiter'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:4:41: 'souhaiter'
                     {
                     match("souhaiter"); 
 
@@ -124,7 +121,7 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = COUNT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:8:7: ( 'nombre' | 'combien' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:8:7: ( 'nombre' | 'combien' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -142,7 +139,7 @@ public class GrammarLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:8:9: 'nombre'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:8:9: 'nombre'
                     {
                     match("nombre"); 
 
@@ -150,7 +147,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:8:20: 'combien'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:8:20: 'combien'
                     {
                     match("combien"); 
 
@@ -172,7 +169,7 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = ARTICLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:12:9: ( 'article' | 'texte' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:12:9: ( 'article' | 'texte' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -190,7 +187,7 @@ public class GrammarLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:12:11: 'article'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:12:11: 'article'
                     {
                     match("article"); 
 
@@ -198,7 +195,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:12:24: 'texte'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:12:24: 'texte'
                     {
                     match("texte"); 
 
@@ -220,8 +217,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = PAGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:14:6: ( 'page' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:14:8: 'page'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:14:6: ( 'page' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:14:8: 'page'
             {
             match("page"); 
 
@@ -241,58 +238,14 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = RUBRIQUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:17:10: ( 'une' | 'focus' | 'gros titre' )
-            int alt4=3;
-            switch ( input.LA(1) ) {
-            case 'u':
-                {
-                alt4=1;
-                }
-                break;
-            case 'f':
-                {
-                alt4=2;
-                }
-                break;
-            case 'g':
-                {
-                alt4=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:17:10: ( 'rubrique' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:17:12: 'rubrique'
+            {
+            match("rubrique"); 
 
-                throw nvae;
+
             }
 
-            switch (alt4) {
-                case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:17:12: 'une'
-                    {
-                    match("une"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:17:20: 'focus'
-                    {
-                    match("focus"); 
-
-
-                    }
-                    break;
-                case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:17:30: 'gros titre'
-                    {
-                    match("gros titre"); 
-
-
-                    }
-                    break;
-
-            }
             state.type = _type;
             state.channel = _channel;
         }
@@ -306,34 +259,34 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = MOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:19:5: ( 'mot' | 'contenir' | 'parle' )
-            int alt5=3;
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:19:5: ( 'mot' | 'contenir' | 'parle' )
+            int alt4=3;
             switch ( input.LA(1) ) {
             case 'm':
                 {
-                alt5=1;
+                alt4=1;
                 }
                 break;
             case 'c':
                 {
-                alt5=2;
+                alt4=2;
                 }
                 break;
             case 'p':
                 {
-                alt5=3;
+                alt4=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:19:7: 'mot'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:19:7: 'mot'
                     {
                     match("mot"); 
 
@@ -341,7 +294,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:19:15: 'contenir'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:19:15: 'contenir'
                     {
                     match("contenir"); 
 
@@ -349,7 +302,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:19:28: 'parle'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:19:28: 'parle'
                     {
                     match("parle"); 
 
@@ -371,8 +324,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = PARAITRE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:21:10: ( 'parus' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:21:12: 'parus'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:21:10: ( 'parus' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:21:12: 'parus'
             {
             match("parus"); 
 
@@ -392,8 +345,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = AUTEUR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:23:9: ( 'auteur' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:23:11: 'auteur'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:23:9: ( 'auteur' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:23:11: 'auteur'
             {
             match("auteur"); 
 
@@ -413,8 +366,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = THEME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:25:8: ( 'theme' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:25:10: 'theme'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:25:8: ( 'theme' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:25:10: 'theme'
             {
             match("theme"); 
 
@@ -434,8 +387,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = TITRE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:27:8: ( 'titre' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:27:10: 'titre'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:27:8: ( 'titre' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:27:10: 'titre'
             {
             match("titre"); 
 
@@ -455,10 +408,55 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = VAR_EMAIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:11: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '@' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '.' ) ( 'A' .. 'Z' | 'a' .. 'z' )+ )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:13: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '@' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '.' ) ( 'A' .. 'Z' | 'a' .. 'z' )+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:11: ( ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '@' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '.' ) ( 'A' .. 'Z' | 'a' .. 'z' )+ )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:13: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '@' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+ ( '.' ) ( 'A' .. 'Z' | 'a' .. 'z' )+
             {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:13: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:13: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+
+            int cnt5=0;
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
+
+                if ( ((LA5_0>='0' && LA5_0<='9')||(LA5_0>='A' && LA5_0<='Z')||(LA5_0>='a' && LA5_0<='z')) ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:
+            	    {
+            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt5 >= 1 ) break loop5;
+                        EarlyExitException eee =
+                            new EarlyExitException(5, input);
+                        throw eee;
+                }
+                cnt5++;
+            } while (true);
+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:47: ( '@' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:48: '@'
+            {
+            match('@'); 
+
+            }
+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:52: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -472,7 +470,7 @@ public class GrammarLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -496,30 +494,30 @@ public class GrammarLexer extends Lexer {
                 cnt6++;
             } while (true);
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:47: ( '@' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:48: '@'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:86: ( '.' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:87: '.'
             {
-            match('@'); 
+            match('.'); 
 
             }
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:52: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' )+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:31:92: ( 'A' .. 'Z' | 'a' .. 'z' )+
             int cnt7=0;
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( ((LA7_0>='0' && LA7_0<='9')||(LA7_0>='A' && LA7_0<='Z')||(LA7_0>='a' && LA7_0<='z')) ) {
+                if ( ((LA7_0>='A' && LA7_0<='Z')||(LA7_0>='a' && LA7_0<='z')) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:
             	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	    if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
 
             	    }
@@ -541,51 +539,6 @@ public class GrammarLexer extends Lexer {
                 cnt7++;
             } while (true);
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:86: ( '.' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:87: '.'
-            {
-            match('.'); 
-
-            }
-
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:31:92: ( 'A' .. 'Z' | 'a' .. 'z' )+
-            int cnt8=0;
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( ((LA8_0>='A' && LA8_0<='Z')||(LA8_0>='a' && LA8_0<='z')) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:
-            	    {
-            	    if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt8 >= 1 ) break loop8;
-                        EarlyExitException eee =
-                            new EarlyExitException(8, input);
-                        throw eee;
-                }
-                cnt8++;
-            } while (true);
-
 
             }
 
@@ -602,53 +555,53 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:5: ( ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' ) | '\\n' )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:5: ( ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' ) | '\\n' )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA10_0=='\t'||LA10_0=='\r'||LA10_0==' '||LA10_0=='J'||LA10_0=='d'||LA10_0=='j'||LA10_0=='l'||LA10_0=='q') ) {
-                alt10=1;
+            if ( (LA9_0=='\t'||LA9_0=='\r'||LA9_0==' '||LA9_0=='J'||LA9_0=='d'||LA9_0=='j'||LA9_0=='l'||LA9_0=='q') ) {
+                alt9=1;
             }
-            else if ( (LA10_0=='\n') ) {
-                alt10=2;
+            else if ( (LA9_0=='\n') ) {
+                alt9=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt9) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:7: ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:7: ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' )
                     {
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:7: ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' )
-                    int alt9=11;
-                    alt9 = dfa9.predict(input);
-                    switch (alt9) {
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:7: ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' )
+                    int alt8=11;
+                    alt8 = dfa8.predict(input);
+                    switch (alt8) {
                         case 1 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:8: ' '
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:8: ' '
                             {
                             match(' '); 
 
                             }
                             break;
                         case 2 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:13: '\\t'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:13: '\\t'
                             {
                             match('\t'); 
 
                             }
                             break;
                         case 3 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:20: '\\r'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:20: '\\r'
                             {
                             match('\r'); 
 
                             }
                             break;
                         case 4 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:27: 'je'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:27: 'je'
                             {
                             match("je"); 
 
@@ -656,7 +609,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 5 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:34: 'Je'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:34: 'Je'
                             {
                             match("Je"); 
 
@@ -664,7 +617,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 6 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:41: 'qui'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:41: 'qui'
                             {
                             match("qui"); 
 
@@ -672,7 +625,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 7 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:49: 'les'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:49: 'les'
                             {
                             match("les"); 
 
@@ -680,7 +633,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 8 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:57: 'dont'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:57: 'dont'
                             {
                             match("dont"); 
 
@@ -688,7 +641,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 9 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:66: 'de'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:66: 'de'
                             {
                             match("de"); 
 
@@ -696,7 +649,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 10 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:73: 'd\\''
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:73: 'd\\''
                             {
                             match("d'"); 
 
@@ -704,7 +657,7 @@ public class GrammarLexer extends Lexer {
                             }
                             break;
                         case 11 :
-                            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:81: 'le'
+                            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:81: 'le'
                             {
                             match("le"); 
 
@@ -719,7 +672,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:35:99: '\\n'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:35:99: '\\n'
                     {
                     match('\n'); 
 
@@ -740,8 +693,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = POINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:38:7: ( '.' | '?' | '!' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:38:7: ( '.' | '?' | '!' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:
             {
             if ( input.LA(1)=='!'||input.LA(1)=='.'||input.LA(1)=='?' ) {
                 input.consume();
@@ -768,23 +721,23 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = JOUR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:6: ( ( '0' .. '3' )? ( '0' .. '9' ) )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:8: ( '0' .. '3' )? ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:6: ( ( '0' .. '3' )? ( '0' .. '9' ) )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:8: ( '0' .. '3' )? ( '0' .. '9' )
             {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:8: ( '0' .. '3' )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:8: ( '0' .. '3' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( ((LA11_0>='0' && LA11_0<='3')) ) {
-                int LA11_1 = input.LA(2);
+            if ( ((LA10_0>='0' && LA10_0<='3')) ) {
+                int LA10_1 = input.LA(2);
 
-                if ( ((LA11_1>='0' && LA11_1<='9')) ) {
-                    alt11=1;
+                if ( ((LA10_1>='0' && LA10_1<='9')) ) {
+                    alt10=1;
                 }
             }
-            switch (alt11) {
+            switch (alt10) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:9: '0' .. '3'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:9: '0' .. '3'
                     {
                     matchRange('0','3'); 
 
@@ -793,8 +746,8 @@ public class GrammarLexer extends Lexer {
 
             }
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:19: ( '0' .. '9' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:41:20: '0' .. '9'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:19: ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:41:20: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -816,8 +769,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = CONJET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:43:9: ( 'et' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:43:12: 'et'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:43:9: ( 'et' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:43:12: 'et'
             {
             match("et"); 
 
@@ -837,8 +790,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = CONJOU;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:44:9: ( 'ou' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:44:11: 'ou'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:44:9: ( 'ou' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:44:11: 'ou'
             {
             match("ou"); 
 
@@ -858,12 +811,12 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = MOIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:7: ( 'janvier' | 'fevrier' | 'mars' | 'avril' | 'mai' | 'juin' | 'juillet' | 'aout' | 'septembre' | 'octobre' | 'novembre' | 'decembre' )
-            int alt12=12;
-            alt12 = dfa12.predict(input);
-            switch (alt12) {
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:7: ( 'janvier' | 'fevrier' | 'mars' | 'avril' | 'mai' | 'juin' | 'juillet' | 'aout' | 'septembre' | 'octobre' | 'novembre' | 'decembre' )
+            int alt11=12;
+            alt11 = dfa11.predict(input);
+            switch (alt11) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:9: 'janvier'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:9: 'janvier'
                     {
                     match("janvier"); 
 
@@ -871,7 +824,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:21: 'fevrier'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:21: 'fevrier'
                     {
                     match("fevrier"); 
 
@@ -879,7 +832,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:33: 'mars'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:33: 'mars'
                     {
                     match("mars"); 
 
@@ -887,7 +840,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:42: 'avril'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:42: 'avril'
                     {
                     match("avril"); 
 
@@ -895,7 +848,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:52: 'mai'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:52: 'mai'
                     {
                     match("mai"); 
 
@@ -903,7 +856,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:60: 'juin'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:60: 'juin'
                     {
                     match("juin"); 
 
@@ -911,7 +864,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:69: 'juillet'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:69: 'juillet'
                     {
                     match("juillet"); 
 
@@ -919,7 +872,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:81: 'aout'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:81: 'aout'
                     {
                     match("aout"); 
 
@@ -927,7 +880,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:90: 'septembre'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:90: 'septembre'
                     {
                     match("septembre"); 
 
@@ -935,7 +888,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:104: 'octobre'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:104: 'octobre'
                     {
                     match("octobre"); 
 
@@ -943,7 +896,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:116: 'novembre'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:116: 'novembre'
                     {
                     match("novembre"); 
 
@@ -951,7 +904,7 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:45:129: 'decembre'
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:45:129: 'decembre'
                     {
                     match("decembre"); 
 
@@ -973,32 +926,32 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = ANNEE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:8: ( ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:10: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:8: ( ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:10: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
             {
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:10: ( '0' .. '9' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:11: '0' .. '9'
-            {
-            matchRange('0','9'); 
-
-            }
-
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:20: ( '0' .. '9' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:21: '0' .. '9'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:10: ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:11: '0' .. '9'
             {
             matchRange('0','9'); 
 
             }
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:30: ( '0' .. '9' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:31: '0' .. '9'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:20: ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:21: '0' .. '9'
             {
             matchRange('0','9'); 
 
             }
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:40: ( '0' .. '9' )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:46:41: '0' .. '9'
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:30: ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:31: '0' .. '9'
+            {
+            matchRange('0','9'); 
+
+            }
+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:40: ( '0' .. '9' )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:46:41: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -1020,38 +973,38 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = VAR_DATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:10: ( ( JOUR ' ' MOIS ' ' ANNEE ) | ( MOIS ' ' ANNEE ) | ( ANNEE ) )
-            int alt13=3;
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:10: ( ( JOUR ' ' MOIS ' ' ANNEE ) | ( MOIS ' ' ANNEE ) | ( ANNEE ) )
+            int alt12=3;
             switch ( input.LA(1) ) {
             case '0':
             case '1':
             case '2':
             case '3':
                 {
-                int LA13_1 = input.LA(2);
+                int LA12_1 = input.LA(2);
 
-                if ( ((LA13_1>='0' && LA13_1<='9')) ) {
-                    int LA13_4 = input.LA(3);
+                if ( (LA12_1==' ') ) {
+                    alt12=1;
+                }
+                else if ( ((LA12_1>='0' && LA12_1<='9')) ) {
+                    int LA12_5 = input.LA(3);
 
-                    if ( (LA13_4==' ') ) {
-                        alt13=1;
+                    if ( (LA12_5==' ') ) {
+                        alt12=1;
                     }
-                    else if ( ((LA13_4>='0' && LA13_4<='9')) ) {
-                        alt13=3;
+                    else if ( ((LA12_5>='0' && LA12_5<='9')) ) {
+                        alt12=3;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 13, 4, input);
+                            new NoViableAltException("", 12, 5, input);
 
                         throw nvae;
                     }
                 }
-                else if ( (LA13_1==' ') ) {
-                    alt13=1;
-                }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 13, 1, input);
+                        new NoViableAltException("", 12, 1, input);
 
                     throw nvae;
                 }
@@ -1064,17 +1017,17 @@ public class GrammarLexer extends Lexer {
             case '8':
             case '9':
                 {
-                int LA13_2 = input.LA(2);
+                int LA12_2 = input.LA(2);
 
-                if ( (LA13_2==' ') ) {
-                    alt13=1;
+                if ( (LA12_2==' ') ) {
+                    alt12=1;
                 }
-                else if ( ((LA13_2>='0' && LA13_2<='9')) ) {
-                    alt13=3;
+                else if ( ((LA12_2>='0' && LA12_2<='9')) ) {
+                    alt12=3;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 13, 2, input);
+                        new NoViableAltException("", 12, 2, input);
 
                     throw nvae;
                 }
@@ -1089,22 +1042,22 @@ public class GrammarLexer extends Lexer {
             case 'o':
             case 's':
                 {
-                alt13=2;
+                alt12=2;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:12: ( JOUR ' ' MOIS ' ' ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:12: ( JOUR ' ' MOIS ' ' ANNEE )
                     {
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:12: ( JOUR ' ' MOIS ' ' ANNEE )
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:13: JOUR ' ' MOIS ' ' ANNEE
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:12: ( JOUR ' ' MOIS ' ' ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:13: JOUR ' ' MOIS ' ' ANNEE
                     {
                     mJOUR(); 
                     match(' '); 
@@ -1118,10 +1071,10 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:40: ( MOIS ' ' ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:40: ( MOIS ' ' ANNEE )
                     {
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:40: ( MOIS ' ' ANNEE )
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:41: MOIS ' ' ANNEE
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:40: ( MOIS ' ' ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:41: MOIS ' ' ANNEE
                     {
                     mMOIS(); 
                     match(' '); 
@@ -1133,10 +1086,10 @@ public class GrammarLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:59: ( ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:59: ( ANNEE )
                     {
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:59: ( ANNEE )
-                    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:47:60: ANNEE
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:59: ( ANNEE )
+                    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:47:60: ANNEE
                     {
                     mANNEE(); 
 
@@ -1160,8 +1113,8 @@ public class GrammarLexer extends Lexer {
         try {
             int _type = VAR_MOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:48:9: ( ( 'A' .. 'Z' | 'a' .. 'z' ) ( 'a' .. 'z' )+ )
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:48:11: ( 'A' .. 'Z' | 'a' .. 'z' ) ( 'a' .. 'z' )+
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:48:9: ( ( 'A' .. 'Z' | 'a' .. 'z' ) ( 'a' .. 'z' )+ )
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:48:11: ( 'A' .. 'Z' | 'a' .. 'z' ) ( 'a' .. 'z' )+
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1172,21 +1125,21 @@ public class GrammarLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // /volsme/users/lo17a008/public_html/ressources/Grammar.g:48:33: ( 'a' .. 'z' )+
-            int cnt14=0;
-            loop14:
+            // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:48:33: ( 'a' .. 'z' )+
+            int cnt13=0;
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA14_0>='a' && LA14_0<='z')) ) {
-                    alt14=1;
+                if ( ((LA13_0>='a' && LA13_0<='z')) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
-            	    // /volsme/users/lo17a008/public_html/ressources/Grammar.g:48:34: 'a' .. 'z'
+            	    // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:48:34: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
@@ -1194,12 +1147,12 @@ public class GrammarLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt14 >= 1 ) break loop14;
+            	    if ( cnt13 >= 1 ) break loop13;
                         EarlyExitException eee =
-                            new EarlyExitException(14, input);
+                            new EarlyExitException(13, input);
                         throw eee;
                 }
-                cnt14++;
+                cnt13++;
             } while (true);
 
 
@@ -1214,145 +1167,145 @@ public class GrammarLexer extends Lexer {
     // $ANTLR end "VAR_MOT"
 
     public void mTokens() throws RecognitionException {
-        // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:8: ( SELECT | COUNT | ARTICLE | PAGE | RUBRIQUE | MOT | PARAITRE | AUTEUR | THEME | TITRE | VAR_EMAIL | WS | POINT | JOUR | CONJET | CONJOU | MOIS | ANNEE | VAR_DATE | VAR_MOT )
-        int alt15=20;
-        alt15 = dfa15.predict(input);
-        switch (alt15) {
+        // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:8: ( SELECT | COUNT | ARTICLE | PAGE | RUBRIQUE | MOT | PARAITRE | AUTEUR | THEME | TITRE | VAR_EMAIL | WS | POINT | JOUR | CONJET | CONJOU | MOIS | ANNEE | VAR_DATE | VAR_MOT )
+        int alt14=20;
+        alt14 = dfa14.predict(input);
+        switch (alt14) {
             case 1 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:10: SELECT
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:10: SELECT
                 {
                 mSELECT(); 
 
                 }
                 break;
             case 2 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:17: COUNT
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:17: COUNT
                 {
                 mCOUNT(); 
 
                 }
                 break;
             case 3 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:23: ARTICLE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:23: ARTICLE
                 {
                 mARTICLE(); 
 
                 }
                 break;
             case 4 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:31: PAGE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:31: PAGE
                 {
                 mPAGE(); 
 
                 }
                 break;
             case 5 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:36: RUBRIQUE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:36: RUBRIQUE
                 {
                 mRUBRIQUE(); 
 
                 }
                 break;
             case 6 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:45: MOT
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:45: MOT
                 {
                 mMOT(); 
 
                 }
                 break;
             case 7 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:49: PARAITRE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:49: PARAITRE
                 {
                 mPARAITRE(); 
 
                 }
                 break;
             case 8 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:58: AUTEUR
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:58: AUTEUR
                 {
                 mAUTEUR(); 
 
                 }
                 break;
             case 9 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:65: THEME
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:65: THEME
                 {
                 mTHEME(); 
 
                 }
                 break;
             case 10 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:71: TITRE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:71: TITRE
                 {
                 mTITRE(); 
 
                 }
                 break;
             case 11 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:77: VAR_EMAIL
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:77: VAR_EMAIL
                 {
                 mVAR_EMAIL(); 
 
                 }
                 break;
             case 12 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:87: WS
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:87: WS
                 {
                 mWS(); 
 
                 }
                 break;
             case 13 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:90: POINT
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:90: POINT
                 {
                 mPOINT(); 
 
                 }
                 break;
             case 14 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:96: JOUR
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:96: JOUR
                 {
                 mJOUR(); 
 
                 }
                 break;
             case 15 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:101: CONJET
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:101: CONJET
                 {
                 mCONJET(); 
 
                 }
                 break;
             case 16 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:108: CONJOU
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:108: CONJOU
                 {
                 mCONJOU(); 
 
                 }
                 break;
             case 17 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:115: MOIS
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:115: MOIS
                 {
                 mMOIS(); 
 
                 }
                 break;
             case 18 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:120: ANNEE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:120: ANNEE
                 {
                 mANNEE(); 
 
                 }
                 break;
             case 19 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:126: VAR_DATE
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:126: VAR_DATE
                 {
                 mVAR_DATE(); 
 
                 }
                 break;
             case 20 :
-                // /volsme/users/lo17a008/public_html/ressources/Grammar.g:1:135: VAR_MOT
+                // E:\\Projects\\lo17a008\\antlr\\ressources\\Grammar.g:1:135: VAR_MOT
                 {
                 mVAR_MOT(); 
 
@@ -1364,24 +1317,24 @@ public class GrammarLexer extends Lexer {
     }
 
 
-    protected DFA9 dfa9 = new DFA9(this);
-    protected DFA12 dfa12 = new DFA12(this);
-    protected DFA15 dfa15 = new DFA15(this);
-    static final String DFA9_eotS =
+    protected DFA8 dfa8 = new DFA8(this);
+    protected DFA11 dfa11 = new DFA11(this);
+    protected DFA14 dfa14 = new DFA14(this);
+    static final String DFA8_eotS =
         "\11\uffff\1\16\5\uffff";
-    static final String DFA9_eofS =
+    static final String DFA8_eofS =
         "\17\uffff";
-    static final String DFA9_minS =
+    static final String DFA8_minS =
         "\1\11\6\uffff\1\145\1\47\1\163\5\uffff";
-    static final String DFA9_maxS =
+    static final String DFA8_maxS =
         "\1\161\6\uffff\1\145\1\157\1\163\5\uffff";
-    static final String DFA9_acceptS =
+    static final String DFA8_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\3\uffff\1\10\1\11\1\12\1\7\1\13";
-    static final String DFA9_specialS =
+    static final String DFA8_specialS =
         "\17\uffff}>";
-    static final String[] DFA9_transitionS = {
-            "\1\2\3\uffff\1\3\22\uffff\1\1\51\uffff\1\5\31\uffff\1\10\5\uffff"+
-            "\1\4\1\uffff\1\7\4\uffff\1\6",
+    static final String[] DFA8_transitionS = {
+            "\1\2\3\uffff\1\3\22\uffff\1\1\51\uffff\1\5\31\uffff\1\10\5"+
+            "\uffff\1\4\1\uffff\1\7\4\uffff\1\6",
             "",
             "",
             "",
@@ -1398,54 +1351,54 @@ public class GrammarLexer extends Lexer {
             ""
     };
 
-    static final short[] DFA9_eot = DFA.unpackEncodedString(DFA9_eotS);
-    static final short[] DFA9_eof = DFA.unpackEncodedString(DFA9_eofS);
-    static final char[] DFA9_min = DFA.unpackEncodedStringToUnsignedChars(DFA9_minS);
-    static final char[] DFA9_max = DFA.unpackEncodedStringToUnsignedChars(DFA9_maxS);
-    static final short[] DFA9_accept = DFA.unpackEncodedString(DFA9_acceptS);
-    static final short[] DFA9_special = DFA.unpackEncodedString(DFA9_specialS);
-    static final short[][] DFA9_transition;
+    static final short[] DFA8_eot = DFA.unpackEncodedString(DFA8_eotS);
+    static final short[] DFA8_eof = DFA.unpackEncodedString(DFA8_eofS);
+    static final char[] DFA8_min = DFA.unpackEncodedStringToUnsignedChars(DFA8_minS);
+    static final char[] DFA8_max = DFA.unpackEncodedStringToUnsignedChars(DFA8_maxS);
+    static final short[] DFA8_accept = DFA.unpackEncodedString(DFA8_acceptS);
+    static final short[] DFA8_special = DFA.unpackEncodedString(DFA8_specialS);
+    static final short[][] DFA8_transition;
 
     static {
-        int numStates = DFA9_transitionS.length;
-        DFA9_transition = new short[numStates][];
+        int numStates = DFA8_transitionS.length;
+        DFA8_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA9_transition[i] = DFA.unpackEncodedString(DFA9_transitionS[i]);
+            DFA8_transition[i] = DFA.unpackEncodedString(DFA8_transitionS[i]);
         }
     }
 
-    class DFA9 extends DFA {
+    class DFA8 extends DFA {
 
-        public DFA9(BaseRecognizer recognizer) {
+        public DFA8(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 9;
-            this.eot = DFA9_eot;
-            this.eof = DFA9_eof;
-            this.min = DFA9_min;
-            this.max = DFA9_max;
-            this.accept = DFA9_accept;
-            this.special = DFA9_special;
-            this.transition = DFA9_transition;
+            this.decisionNumber = 8;
+            this.eot = DFA8_eot;
+            this.eof = DFA8_eof;
+            this.min = DFA8_min;
+            this.max = DFA8_max;
+            this.accept = DFA8_accept;
+            this.special = DFA8_special;
+            this.transition = DFA8_transition;
         }
         public String getDescription() {
             return "35:7: ( ' ' | '\\t' | '\\r' | 'je' | 'Je' | 'qui' | 'les' | 'dont' | 'de' | 'd\\'' | 'le' )";
         }
     }
-    static final String DFA12_eotS =
+    static final String DFA11_eotS =
         "\23\uffff";
-    static final String DFA12_eofS =
+    static final String DFA11_eofS =
         "\23\uffff";
-    static final String DFA12_minS =
+    static final String DFA11_minS =
         "\2\141\1\uffff\1\141\1\157\5\uffff\2\151\2\uffff\1\154\4\uffff";
-    static final String DFA12_maxS =
-        "\1\163\1\165\1\uffff\1\141\1\166\5\uffff\1\151\1\162\2\uffff\1\156"+
-        "\4\uffff";
-    static final String DFA12_acceptS =
+    static final String DFA11_maxS =
+        "\1\163\1\165\1\uffff\1\141\1\166\5\uffff\1\151\1\162\2\uffff\1"+
+        "\156\4\uffff";
+    static final String DFA11_acceptS =
         "\2\uffff\1\2\2\uffff\1\11\1\12\1\13\1\14\1\1\2\uffff\1\4\1\10\1"+
         "\uffff\1\3\1\5\1\6\1\7";
-    static final String DFA12_specialS =
+    static final String DFA11_specialS =
         "\23\uffff}>";
-    static final String[] DFA12_transitionS = {
+    static final String[] DFA11_transitionS = {
             "\1\4\2\uffff\1\10\1\uffff\1\2\3\uffff\1\1\2\uffff\1\3\1\7\1"+
             "\6\3\uffff\1\5",
             "\1\11\23\uffff\1\12",
@@ -1468,305 +1421,300 @@ public class GrammarLexer extends Lexer {
             ""
     };
 
-    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
-    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
-    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
-    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
-    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
-    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
-    static final short[][] DFA12_transition;
+    static final short[] DFA11_eot = DFA.unpackEncodedString(DFA11_eotS);
+    static final short[] DFA11_eof = DFA.unpackEncodedString(DFA11_eofS);
+    static final char[] DFA11_min = DFA.unpackEncodedStringToUnsignedChars(DFA11_minS);
+    static final char[] DFA11_max = DFA.unpackEncodedStringToUnsignedChars(DFA11_maxS);
+    static final short[] DFA11_accept = DFA.unpackEncodedString(DFA11_acceptS);
+    static final short[] DFA11_special = DFA.unpackEncodedString(DFA11_specialS);
+    static final short[][] DFA11_transition;
 
     static {
-        int numStates = DFA12_transitionS.length;
-        DFA12_transition = new short[numStates][];
+        int numStates = DFA11_transitionS.length;
+        DFA11_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
+            DFA11_transition[i] = DFA.unpackEncodedString(DFA11_transitionS[i]);
         }
     }
 
-    class DFA12 extends DFA {
+    class DFA11 extends DFA {
 
-        public DFA12(BaseRecognizer recognizer) {
+        public DFA11(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = DFA12_eot;
-            this.eof = DFA12_eof;
-            this.min = DFA12_min;
-            this.max = DFA12_max;
-            this.accept = DFA12_accept;
-            this.special = DFA12_special;
-            this.transition = DFA12_transition;
+            this.decisionNumber = 11;
+            this.eot = DFA11_eot;
+            this.eof = DFA11_eof;
+            this.min = DFA11_min;
+            this.max = DFA11_max;
+            this.accept = DFA11_accept;
+            this.special = DFA11_special;
+            this.transition = DFA11_transition;
         }
         public String getDescription() {
             return "45:1: MOIS : ( 'janvier' | 'fevrier' | 'mars' | 'avril' | 'mai' | 'juin' | 'juillet' | 'aout' | 'septembre' | 'octobre' | 'novembre' | 'decembre' );";
         }
     }
-    static final String DFA15_eotS =
-        "\23\uffff\1\70\1\uffff\1\70\3\uffff\1\77\1\uffff\3\77\1\17\22\77"+
-        "\1\17\2\77\1\17\1\77\1\17\1\70\3\uffff\1\136\1\137\2\77\1\uffff"+
-        "\22\77\1\166\3\77\1\172\1\77\1\174\2\77\2\17\3\uffff\4\77\1\17\12"+
-        "\77\1\174\3\77\1\u0092\2\77\1\uffff\3\77\1\uffff\1\174\1\uffff\1"+
-        "\77\1\174\1\77\1\u0099\15\77\1\174\1\u00a7\1\u00a8\1\u00a9\1\uffff"+
-        "\1\172\1\u00aa\1\166\3\77\1\uffff\3\77\1\u00b1\3\77\1\u00b5\4\77"+
-        "\1\u00ba\4\uffff\4\77\1\u00b1\1\77\1\uffff\3\77\1\uffff\1\77\1\u00b5"+
-        "\1\77\1\u00a7\1\uffff\4\174\1\77\1\174\2\77\1\174\1\172\2\u00b1"+
-        "\1\174";
-    static final String DFA15_eofS =
-        "\u00c8\uffff";
-    static final String DFA15_minS =
-        "\1\11\2\60\1\47\13\60\1\uffff\3\60\1\40\1\uffff\1\40\4\60\1\uffff"+
-        "\34\60\1\40\2\uffff\5\60\1\uffff\30\60\1\40\5\60\2\uffff\17\60\1"+
-        "\40\6\60\1\uffff\2\60\1\40\1\uffff\1\40\1\uffff\1\60\1\40\17\60"+
-        "\1\40\3\60\1\uffff\6\60\1\uffff\15\60\4\uffff\6\60\1\uffff\3\60"+
-        "\1\uffff\4\60\1\uffff\4\40\1\60\1\40\2\60\1\40\3\60\1\40";
-    static final String DFA15_maxS =
-        "\17\172\1\uffff\4\172\1\uffff\5\172\1\uffff\35\172\2\uffff\5\172"+
-        "\1\uffff\36\172\2\uffff\26\172\1\uffff\3\172\1\uffff\1\172\1\uffff"+
-        "\25\172\1\uffff\6\172\1\uffff\15\172\4\uffff\6\172\1\uffff\3\172"+
-        "\1\uffff\4\172\1\uffff\15\172";
-    static final String DFA15_acceptS =
-        "\17\uffff\1\14\4\uffff\1\15\5\uffff\1\13\35\uffff\1\16\1\23\5\uffff"+
-        "\1\24\36\uffff\1\17\1\20\26\uffff\1\5\3\uffff\1\6\1\uffff\1\21\25"+
-        "\uffff\1\4\6\uffff\1\22\15\uffff\1\3\1\11\1\12\1\7\6\uffff\1\1\3"+
-        "\uffff\1\2\4\uffff\1\10\15\uffff";
-    static final String DFA15_specialS =
-        "\u00c8\uffff}>";
-    static final String[] DFA15_transitionS = {
-            "\2\17\2\uffff\1\17\22\uffff\1\17\1\24\14\uffff\1\24\1\uffff"+
-            "\4\23\6\25\5\uffff\1\24\1\uffff\11\30\1\20\20\30\6\uffff\1\7"+
-            "\1\30\1\6\1\3\1\26\1\13\1\14\2\30\1\16\1\30\1\22\1\15\1\5\1"+
-            "\27\1\11\1\21\1\2\1\4\1\10\1\12\1\1\4\30",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\31\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\34\25\33",
-            "\1\17\10\uffff\12\32\6\uffff\33\32\6\uffff\4\33\1\36\11\33"+
-            "\1\35\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\40\11\33\1\37\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\41\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\42\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\46\2\33\1\43\2\33\1\44"+
-            "\1\45\4\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\47\2\33\1\50\1\51\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\52\31\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\53\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\55\11\33\1\54\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\56\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\60\15\33\1\57\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\62\3\33\1\61\17\33\1\63\5\33",
+    static final String DFA14_eotS =
+        "\20\uffff\1\63\1\uffff\1\63\4\uffff\2\73\1\uffff\3\73\1\14\16\73"+
+        "\1\14\2\73\1\14\1\73\1\14\1\63\3\uffff\1\127\1\130\3\73\1\uffff"+
+        "\23\73\1\161\1\73\1\163\2\73\2\14\3\uffff\6\73\1\14\12\73\1\163"+
+        "\3\73\1\u008b\2\73\1\uffff\1\163\1\uffff\1\73\1\163\1\73\1\u0090"+
+        "\17\73\1\163\1\u00a0\1\u00a1\1\u00a2\1\uffff\1\161\1\u00a3\2\73"+
+        "\1\uffff\5\73\1\u00ab\3\73\1\u00af\4\73\1\u00b4\4\uffff\4\73\1\u00ab"+
+        "\2\73\1\uffff\3\73\1\uffff\1\73\1\u00af\1\73\1\u00a0\1\uffff\4\163"+
+        "\1\73\1\u00c1\1\163\2\73\1\163\1\161\1\u00ab\1\uffff\1\u00ab\1\163";
+    static final String DFA14_eofS =
+        "\u00c4\uffff";
+    static final String DFA14_minS =
+        "\1\11\2\60\1\47\10\60\1\uffff\3\60\1\40\1\uffff\1\40\6\60\1\uffff"+
+        "\30\60\1\40\2\uffff\6\60\1\uffff\25\60\1\40\5\60\2\uffff\21\60\1"+
+        "\40\6\60\1\uffff\1\40\1\uffff\1\60\1\40\21\60\1\40\3\60\1\uffff"+
+        "\4\60\1\uffff\17\60\4\uffff\7\60\1\uffff\3\60\1\uffff\4\60\1\uffff"+
+        "\4\40\2\60\1\40\2\60\1\40\2\60\1\uffff\1\60\1\40";
+    static final String DFA14_maxS =
+        "\14\172\1\uffff\4\172\1\uffff\7\172\1\uffff\31\172\2\uffff\6\172"+
+        "\1\uffff\33\172\2\uffff\30\172\1\uffff\1\172\1\uffff\27\172\1\uffff"+
+        "\4\172\1\uffff\17\172\4\uffff\7\172\1\uffff\3\172\1\uffff\4\172"+
+        "\1\uffff\14\172\1\uffff\2\172";
+    static final String DFA14_acceptS =
+        "\14\uffff\1\14\4\uffff\1\15\7\uffff\1\13\31\uffff\1\16\1\23\6\uffff"+
+        "\1\24\33\uffff\1\17\1\20\30\uffff\1\6\1\uffff\1\21\27\uffff\1\4"+
+        "\4\uffff\1\22\17\uffff\1\3\1\11\1\12\1\7\7\uffff\1\1\3\uffff\1\2"+
+        "\4\uffff\1\10\14\uffff\1\5\2\uffff";
+    static final String DFA14_specialS =
+        "\u00c4\uffff}>";
+    static final String[] DFA14_transitionS = {
+            "\2\14\2\uffff\1\14\22\uffff\1\14\1\21\14\uffff\1\21\1\uffff"+
+            "\4\20\6\22\5\uffff\1\21\1\uffff\11\26\1\15\20\26\6\uffff\1\7"+
+            "\1\26\1\6\1\3\1\23\1\25\3\26\1\13\1\26\1\17\1\12\1\5\1\24\1"+
+            "\11\1\16\1\2\1\4\1\10\1\26\1\1\4\26",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\27\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\32\17\30\1\33\5\30",
+            "\1\14\10\uffff\12\31\6\uffff\33\31\6\uffff\4\30\1\35\11\30"+
+            "\1\34\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\37\11\30\1\36\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\40\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\41\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\45\2\30\1\42\2\30\1\43"+
+            "\1\44\4\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\46\2\30\1\47\1\50\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\51\31\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\53\15\30\1\52\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\55\3\30\1\54\17\30\1\56\5\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\64\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\65\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\66\25\33",
-            "\1\71\17\uffff\12\67\6\uffff\33\32\6\uffff\32\32",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\57\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\60\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\61\25\30",
+            "\1\64\17\uffff\12\62\6\uffff\33\31\6\uffff\32\31",
             "",
-            "\1\71\17\uffff\12\72\6\uffff\33\32\6\uffff\32\32",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\73\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\2\33\1\75\21\33\1\74\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\76\5\33",
+            "\1\64\17\uffff\12\65\6\uffff\33\31\6\uffff\32\31",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\66\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\2\30\1\70\21\30\1\67\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\71\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\72\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\100\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\101\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\2\33\1\102\27\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\103\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\17\33\1\104\12\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\105\10\33\1\106\4\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\107\1\110\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\111\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\112\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\113\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\114\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\27\33\1\115\2\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\116\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\117\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\6\33\1\120\12\33\1\121\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\122\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\2\33\1\123\27\33",
-            "\12\32\6\uffff\33\32\6\uffff\25\33\1\124\4\33",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\125\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\126\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\130\10\33\1\127\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\131\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\132\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\133\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\22\33\1\134\7\33",
-            "\1\71\17\uffff\12\135\6\uffff\33\32\6\uffff\32\32",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\74\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\75\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\76\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\2\30\1\77\27\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\100\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\17\30\1\101\12\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\102\10\30\1\103\4\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\104\1\105\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\106\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\107\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\110\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\111\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\27\30\1\112\2\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\113\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\114\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\6\30\1\115\12\30\1\116\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\117\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\121\10\30\1\120\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\122\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\123\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\124\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\22\30\1\125\7\30",
+            "\1\64\17\uffff\12\126\6\uffff\33\31\6\uffff\32\31",
             "",
             "",
-            "\12\135\6\uffff\33\32\6\uffff\32\32",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\140\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\141\16\33",
+            "\12\126\6\uffff\33\31\6\uffff\32\31",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\131\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\25\30\1\132\4\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\133\16\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\142\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\143\5\33\1\144\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\145\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\7\33\1\146\22\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\147\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\150\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\151\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\152\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\153\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\154\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\155\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\156\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\157\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\160\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\161\15\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\162\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\163\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\164\10\33\1\165\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\167\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\170\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\22\33\1\171\7\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\22\33\1\173\7\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\25\33\1\175\4\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\177\1\33\1\176\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\u0080\6\uffff\33\32\6\uffff\32\32",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\134\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\135\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\136\5\30\1\137\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\140\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\7\30\1\141\22\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\142\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\143\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\144\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\145\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\146\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\147\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\150\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\151\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\152\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\153\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\154\15\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\155\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\156\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\157\10\30\1\160\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\22\30\1\162\7\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\25\30\1\164\4\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\166\1\30\1\165\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\167\6\uffff\33\31\6\uffff\32\31",
             "",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\u0081\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\16\33\1\u0082\13\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\u0083\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u0084\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\u0085\15\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\u0086\31\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u0087\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u0088\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\u0089\15\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u008a\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u008b\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\2\33\1\u008c\27\33",
-            "\12\32\6\uffff\33\32\6\uffff\24\33\1\u008d\5\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\u008e\16\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u008f\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u0090\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u0091\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u0093\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\22\33\1\u0094\7\33",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\170\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\171\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\16\30\1\172\13\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\173\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\174\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\175\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\176\15\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\177\31\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u0080\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u0081\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\u0082\15\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u0083\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u0084\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\2\30\1\u0085\27\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\u0086\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\u0087\16\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u0088\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u0089\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u008a\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u008c\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\22\30\1\u008d\7\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\22\33\1\u0095\7\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u0096\21\33",
-            "\1\166\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
             "",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u008e\21\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\u008f\16\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\31",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\u0091\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u0092\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u0093\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u0094\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\20\30\1\u0095\11\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u0096\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\u0097\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u0098\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\14\30\1\u0099\15\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u009a\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\u009b\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u009c\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\u009d\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\13\30\1\u009e\16\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u009f\10\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u0097\21\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\u0098\16\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\32",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\u009a\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u009b\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u009c\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u009d\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\u009e\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u009f\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\14\33\1\u00a0\15\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00a1\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\u00a2\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00a3\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\u00a4\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\13\33\1\u00a5\16\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00a6\10\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00a4\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00a5\25\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00ab\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00ac\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00ad\25\33",
-            "",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00ae\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00af\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\u00b0\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00b2\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\u00b3\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\1\33\1\u00b4\30\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00b6\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\15\33\1\u00b7\14\33",
-            "\12\32\6\uffff\33\32\6\uffff\10\33\1\u00b8\21\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00b9\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00a6\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00a7\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00a8\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\u00a9\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\24\30\1\u00aa\5\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00ac\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\u00ad\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\1\30\1\u00ae\30\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00b0\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\15\30\1\u00b1\14\30",
+            "\12\31\6\uffff\33\31\6\uffff\10\30\1\u00b2\21\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00b3\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
             "",
             "",
             "",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00bb\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00bc\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\23\33\1\u00bd\6\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00be\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00bf\25\33",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00b5\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\23\30\1\u00b6\6\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00b7\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00b8\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00b9\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00ba\25\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00c0\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00c1\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00c2\10\33",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00bb\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00bc\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00bd\10\30",
             "",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00c3\25\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00c4\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00be\25\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00bf\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
             "",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00c5\10\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\21\33\1\u00c6\10\33",
-            "\12\32\6\uffff\33\32\6\uffff\4\33\1\u00c7\25\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\12\32\6\uffff\33\32\6\uffff\32\33",
-            "\1\71\17\uffff\12\32\6\uffff\33\32\6\uffff\32\33"
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00c0\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\21\30\1\u00c2\10\30",
+            "\12\31\6\uffff\33\31\6\uffff\4\30\1\u00c3\25\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "",
+            "\12\31\6\uffff\33\31\6\uffff\32\30",
+            "\1\64\17\uffff\12\31\6\uffff\33\31\6\uffff\32\30"
     };
 
-    static final short[] DFA15_eot = DFA.unpackEncodedString(DFA15_eotS);
-    static final short[] DFA15_eof = DFA.unpackEncodedString(DFA15_eofS);
-    static final char[] DFA15_min = DFA.unpackEncodedStringToUnsignedChars(DFA15_minS);
-    static final char[] DFA15_max = DFA.unpackEncodedStringToUnsignedChars(DFA15_maxS);
-    static final short[] DFA15_accept = DFA.unpackEncodedString(DFA15_acceptS);
-    static final short[] DFA15_special = DFA.unpackEncodedString(DFA15_specialS);
-    static final short[][] DFA15_transition;
+    static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
+    static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
+    static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
+    static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
+    static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
+    static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
+    static final short[][] DFA14_transition;
 
     static {
-        int numStates = DFA15_transitionS.length;
-        DFA15_transition = new short[numStates][];
+        int numStates = DFA14_transitionS.length;
+        DFA14_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA15_transition[i] = DFA.unpackEncodedString(DFA15_transitionS[i]);
+            DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
         }
     }
 
-    class DFA15 extends DFA {
+    class DFA14 extends DFA {
 
-        public DFA15(BaseRecognizer recognizer) {
+        public DFA14(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 15;
-            this.eot = DFA15_eot;
-            this.eof = DFA15_eof;
-            this.min = DFA15_min;
-            this.max = DFA15_max;
-            this.accept = DFA15_accept;
-            this.special = DFA15_special;
-            this.transition = DFA15_transition;
+            this.decisionNumber = 14;
+            this.eot = DFA14_eot;
+            this.eof = DFA14_eof;
+            this.min = DFA14_min;
+            this.max = DFA14_max;
+            this.accept = DFA14_accept;
+            this.special = DFA14_special;
+            this.transition = DFA14_transition;
         }
         public String getDescription() {
             return "1:1: Tokens : ( SELECT | COUNT | ARTICLE | PAGE | RUBRIQUE | MOT | PARAITRE | AUTEUR | THEME | TITRE | VAR_EMAIL | WS | POINT | JOUR | CONJET | CONJOU | MOIS | ANNEE | VAR_DATE | VAR_MOT );";

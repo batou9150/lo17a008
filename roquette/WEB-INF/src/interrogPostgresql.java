@@ -13,7 +13,7 @@ public class interrogPostgresql {
 		// Syntax: jdbc:TYPE:machine:port/DB_NAME
 		String url = "jdbc:postgresql://tuxa.sme.utc/dblo17";
 
-		String requete = TalMain.toSQLQuery(args, cleaner);
+		String requete = AntlrMain.toSQLQuery(args, cleaner);
 		String result = "";
 
 		System.out.println(requete);
