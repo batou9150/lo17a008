@@ -73,6 +73,9 @@ public class Lexic {
 	Integer getLevenshteinProximity(String s1, String s2) {
 		Integer[][] distance = new Integer[s1.length() + 1][s2.length() + 1];
 		int i, j, cout = 0;
+		if (s1.length() < Utils.seuilPrefix || s2.length() < Utils.seuilPrefix) {
+			return Utils.seuilDistanceLevenshtein + 1; // Chaines trop petites
+		}
 		for (i = 0; i < s1.length() + 1; i++) {
 			distance[i][0] = i;
 		}
@@ -97,8 +100,7 @@ public class Lexic {
 				}
 				distance[i][j] = getMin(distance[i - 1][j]
 						+ Utils.coutSuppression, distance[i][j - 1]
-						+ Utils.coutInsertion, distance[i - 1][j - 1]
-						+ cout);
+						+ Utils.coutInsertion, distance[i - 1][j - 1] + cout);
 			}
 		}
 		return distance[s1.length()][s2.length()];
@@ -153,7 +155,8 @@ public class Lexic {
 		if (keysArray.length > 0) {
 			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit,
+					keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;
@@ -196,7 +199,8 @@ public class Lexic {
 		if (keysArray.length > 0) {
 			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit,
+					keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;

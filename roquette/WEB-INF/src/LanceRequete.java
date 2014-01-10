@@ -7,7 +7,7 @@ import java.sql.*;
 public class LanceRequete extends HttpServlet {
 
 	private static final long serialVersionUID = -7593848046688416193L;
-	
+
 	String username;
 	String password;
 	String url;
@@ -47,8 +47,7 @@ public class LanceRequete extends HttpServlet {
 				out.println(interrogPostgresql.roquette(requete));
 			} catch (SQLException e) {
 			}
-		}
-		else if(requete != null ){
+		} else if (requete != null) {
 			out.println("Requete vide");
 		}
 		out.println("</body>");

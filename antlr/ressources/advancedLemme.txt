@@ -14,7 +14,9 @@ donnez-moi	{vouloir}
 voudrais	{vouloir}
 aimerais	{vouloir}
 donne moi	{vouloir}
-qui	{vouloir}
+veut	{vouloir}
+veux	{vouloir}
+
 
 combien fois	{vouloir nombre}
 combien	{vouloir nombre}
@@ -29,5 +31,4 @@ auteurs	{auteur}
 auteur	{auteur}
 pages	{page}
 page	{page}
-unes	{une}
-une	{une}
+portant sur	{theme}

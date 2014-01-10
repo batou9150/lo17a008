@@ -14,6 +14,7 @@ public class interrogPostgresql {
 		String url = "jdbc:postgresql://tuxa.sme.utc/dblo17";
 
 		String requete = AntlrMain.toSQLQuery(args, cleaner);
+		if(requete == null) return null;
 		String result = "";
 
 		System.out.println(requete);

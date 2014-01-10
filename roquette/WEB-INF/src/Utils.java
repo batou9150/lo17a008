@@ -3,9 +3,9 @@ public class Utils {
 	static int coutSuppression = 4;
 	static int coutSubstitution = 3;
 	static int coutInversion = 1;
-	
+
 	static Integer prefixCountLimit = 10;
-	
+
 	static Integer seuilPrefix = 3;
 	static Integer seuilDistanceLevenshtein = 6;
 

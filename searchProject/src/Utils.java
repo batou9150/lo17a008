@@ -3,19 +3,19 @@ public class Utils {
 	static int coutSuppression = 4;
 	static int coutSubstitution = 3;
 	static int coutInversion = 1;
-	
+
 	static Integer prefixCountLimit = 10;
-	
+
 	static Integer seuilPrefix = 3;
 	static Integer seuilDistanceLevenshtein = 6;
 
 	static String removeAccents(String s) {
-		s = s.replaceAll("[à]", "a");
-		s = s.replaceAll("[éèëê]", "e");
-		s = s.replaceAll("[îï]", "i");
-		s = s.replaceAll("[öô]", "o");
-		s = s.replaceAll("[ù]", "u");
-		s = s.replaceAll("[ç]", "c");
+		s = s.replaceAll("[ï¿½]", "a");
+		s = s.replaceAll("[ï¿½ï¿½ï¿½ï¿½]", "e");
+		s = s.replaceAll("[ï¿½ï¿½]", "i");
+		s = s.replaceAll("[ï¿½ï¿½]", "o");
+		s = s.replaceAll("[ï¿½]", "u");
+		s = s.replaceAll("[ï¿½]", "c");
 		return s;
 	}
 

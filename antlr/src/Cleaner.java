@@ -143,13 +143,15 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
-		s = s.replaceAll("( )+", " ");
-		s = s.replaceAll("'", " ");
 		s = Utils.removeAccents(s);
 		s = Utils.deleteOneLetter(s.toLowerCase());
+		s = applyStoplist(s);
+		s = s.replaceAll("( )+", " ");
+		s = s.replaceAll("'", " ");
 		String[] split = s.split(" ");
 		int i = 0;
 		for(String n : split) {
+			if(n.trim().equals("?")) continue;
 			String[] result = lexic.search(n);
 			if (result != null && result.length > 0) {
 				split[i] = result[0];
@@ -160,7 +162,7 @@ public class Cleaner {
 		for (String n : split) {
 			s = s + n + " ";
 		}
-		System.out.println("Après correction orthographique  : \"" + s + "\"");
+//		System.out.println("AprÃ¨s correction orthographique  : \"" + s + "\"");
 		s = s.trim();
 		s = applyStoplist(s);
 		s = applyLemme(s);

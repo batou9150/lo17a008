@@ -59,7 +59,7 @@ public class Lexic {
 		if (s1.length() < Utils.seuilPrefix || s2.length() < Utils.seuilPrefix) {
 			return 0; // Chaines trop petites
 		} else if (s1.length() - s2.length() > Utils.seuilPrefix) {
-			return 0; // Chaines trop différentes
+			return 0; // Chaines trop diffï¿½rentes
 		} else {
 			int i = 0;
 			while (i < s1.length() && i < s2.length()
@@ -97,8 +97,7 @@ public class Lexic {
 				}
 				distance[i][j] = getMin(distance[i - 1][j]
 						+ Utils.coutSuppression, distance[i][j - 1]
-						+ Utils.coutInsertion, distance[i - 1][j - 1]
-						+ cout);
+						+ Utils.coutInsertion, distance[i - 1][j - 1] + cout);
 			}
 		}
 		return distance[s1.length()][s2.length()];
@@ -153,7 +152,8 @@ public class Lexic {
 		if (keysArray.length > 0) {
 			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit,
+					keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;
@@ -196,7 +196,8 @@ public class Lexic {
 		if (keysArray.length > 0) {
 			String[] returnList = new String[Math.min(Utils.prefixCountLimit,
 					keysArray.length)];
-			for (int i = 0; i < Math.min(Utils.prefixCountLimit, keysArray.length); i++) {
+			for (int i = 0; i < Math.min(Utils.prefixCountLimit,
+					keysArray.length); i++) {
 				returnList[i] = (String) keysArray[i];
 			}
 			return returnList;
@@ -230,7 +231,7 @@ public class Lexic {
 		proximityKeyboard.put("u", "yihjk");
 		proximityKeyboard.put("i", "uojkl");
 		proximityKeyboard.put("o", "ipklm\"");
-		proximityKeyboard.put("p", "o^lmù%à@)])");
+		proximityKeyboard.put("p", "o^lmï¿½%ï¿½@)])");
 		proximityKeyboard.put("q", "azsw<>");
 		proximityKeyboard.put("s", "qdzewx");
 		proximityKeyboard.put("d", "sferxc");
@@ -240,7 +241,7 @@ public class Lexic {
 		proximityKeyboard.put("j", "hkui,n?");
 		proximityKeyboard.put("k", "jlio,;?.");
 		proximityKeyboard.put("l", "kmop;:./");
-		proximityKeyboard.put("m", "lopù%;:!./§^¨");
+		proximityKeyboard.put("m", "lopï¿½%;:!./ï¿½^ï¿½");
 		proximityKeyboard.put("w", "<>xqs");
 		proximityKeyboard.put("x", "wsdc");
 		proximityKeyboard.put("c", "xvfd");

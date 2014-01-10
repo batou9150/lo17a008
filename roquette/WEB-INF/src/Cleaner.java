@@ -31,7 +31,7 @@ public class Cleaner {
 				String[] splittedString;
 				// Loading lemmes
 				URL u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/lemme.txt");	
+						"http://tuxa.sme.utc/~lo17a008/ressources/lexiqueFull.txt");
 				URLConnection uc = u.openConnection();
 				InputStream is = uc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is);
@@ -71,7 +71,7 @@ public class Cleaner {
 				is = uc.getInputStream();
 				isr = new InputStreamReader(is);
 				br = new BufferedReader(isr);
-				
+
 				while ((chaine = br.readLine()) != null) {
 					stoplist.add(Utils.removeAccents(chaine));
 				}
@@ -143,17 +143,21 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
+		 System.out.println("Avant orthographique  : \"" + s + "\"");
 		s = Utils.removeAccents(s);
 		s = Utils.deleteOneLetter(s.toLowerCase());
 		s = applyStoplist(s);
 		s = s.replaceAll("( )+", " ");
 		s = s.replaceAll("'", " ");
+		 System.out.println("Après stop-list  : \"" + s + "\"");
 		String[] split = s.split(" ");
 		int i = 0;
-		for(String n : split) {
-			if(n.trim().equals("?")) continue;
+		for (String n : split) {
+			if (n.trim().equals("?"))
+				continue;
 			String[] result = lexic.search(n);
 			if (result != null && result.length > 0) {
+				System.out.println(split[i] + " - " + result[0]);
 				split[i] = result[0];
 			}
 			i++;
@@ -162,7 +166,7 @@ public class Cleaner {
 		for (String n : split) {
 			s = s + n + " ";
 		}
-//		System.out.println("Après correction orthographique  : \"" + s + "\"");
+		 System.out.println("Après correction orthographique  : \"" + s + "\"");
 		s = s.trim();
 		s = applyStoplist(s);
 		s = applyLemme(s);
