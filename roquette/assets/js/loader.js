@@ -1,8 +1,9 @@
 function load_results(natural_query) {
 	if(natural_query == null) {
 		natural_query = $("input[name=requete]").val();
+	} else {
+		$("input[name=requete]").val(natural_query);
 	}
-	$("input[name=requete]").val(natural_query);
 	$("#content").html("");
 	$("#btn-go").html("<img src=\"assets/img/load.gif\">");
 	var jqxhr = $.ajax({
@@ -10,7 +11,7 @@ function load_results(natural_query) {
 		url : "servlet/LanceRequete",
 		data: { requete : natural_query }
 	}).done(function(data) {
-		$("#content").html("<div class=\"alert alert-success\">"+natural_query+"</div>" + data);
+		$("#content").html(data);
 		$("#btn-go").html("Go!");
 	}).fail(function(jqXHR) {
 		$("#content").html(data + "servlet/LanceRequete");

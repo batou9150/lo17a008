@@ -14,9 +14,6 @@ import java.util.LinkedHashMap;
  */
 public class Cleaner {
 	
-	public static String postCorrection;
-	public static String postLemme;
-
 	private LinkedHashMap<String, String> lemme = new LinkedHashMap<String, String>();
 	private LinkedHashMap<String, String> advancedLemme = new LinkedHashMap<String, String>();
 	private ArrayList<String> stoplist = new ArrayList<String>();
@@ -29,12 +26,13 @@ public class Cleaner {
 		this.lexic = lexic;
 		BufferedReader br = null;
 		String chaine;
+		URL u = null;
 		try {
 			try {
 				String[] splittedString;
 				// Loading lemmes
-				URL u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/lemme.txt");
+				u = new URL(
+						"http://127.0.0.1:8080/roquette/ressources/lemme.txt");
 				URLConnection uc = u.openConnection();
 				InputStream is = uc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is);
@@ -51,7 +49,7 @@ public class Cleaner {
 
 				// Loading advancedLemme
 				u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/advancedLemme.txt");
+						"http://127.0.0.1:8080/roquette/ressources/advancedLemme.txt");
 				uc = u.openConnection();
 				is = uc.getInputStream();
 				isr = new InputStreamReader(is);
@@ -69,7 +67,7 @@ public class Cleaner {
 
 				// Loading the stoplist
 				u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/stoplist.txt");
+						"http://127.0.0.1:8080/roquette/ressources/stoplist.txt");
 				uc = u.openConnection();
 				is = uc.getInputStream();
 				isr = new InputStreamReader(is);
@@ -83,7 +81,7 @@ public class Cleaner {
 				br.close();
 			}
 		} catch (IOException e) {
-			System.out.println("Cleaner - IO Exception");
+			System.out.println("Cleaner - IO Exception : " + u);
 		}
 	}
 
@@ -146,13 +144,10 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
-		System.out.println("Avant orthographique  : \"" + s + "\"");
 		s = s.replaceAll("( )+", " ");
 		s = s.replaceAll("'", " ");
 		s = Utils.removeAccents(s);
 		s = Utils.deleteOneLetter(s.toLowerCase());
-		// s = applyStoplist(s);
-		// System.out.println("Après stop-list  : \"" + s + "\"");
 		String[] split = s.split(" ");
 		int i = 0;
 		for (String n : split) {
@@ -165,7 +160,6 @@ public class Cleaner {
 			}
 			String[] result = lexic.search(n);
 			if (result != null && result.length > 0) {
-				System.out.println(split[i] + " - " + result[0]);
 				split[i] = result[0];
 			}
 			i++;
@@ -174,15 +168,13 @@ public class Cleaner {
 		for (String n : split) {
 			s = s + n + " ";
 		}
-		System.out.println("Après correction orthographique  : \"" + s + "\"");
-		postCorrection = s;
 		s = s.trim();
+		LanceRequete.queryPostCorrection = s;
 		s = applyLemme(s);
 		s = applyAdvancedLemme(s);
 		s = applyStoplist(s);
 		s = s.replaceAll("[\\{\\}]", "");
 		s = Utils.removeAccents(s);
-		postLemme = s;
 		return s;
 	}
 }

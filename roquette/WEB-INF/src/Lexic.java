@@ -20,10 +20,11 @@ public class Lexic {
 		lemme = new Hashtable<String, String>();
 		BufferedReader br = null;
 		String chaine;
+		URL u = null;
 		try {
 			try {
-				URL u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/lexiqueFull.txt");
+				u = new URL(
+						"http://127.0.0.1:8080/roquette/ressources/lexiqueFull.txt");
 				URLConnection uc = u.openConnection();
 				InputStream is = uc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is);
@@ -31,7 +32,6 @@ public class Lexic {
 				String[] splittedString;
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split(" \t");
-					if(splittedString[1].equals("pour ")) System.out.println("test1");
 					lemme.put(Utils.removeAccents(splittedString[0].trim()),
 							Utils.removeAccents(splittedString[1]).trim());
 				}
@@ -39,7 +39,7 @@ public class Lexic {
 				br.close();
 			}
 		} catch (IOException e) {
-			System.out.println("Lexic - IO Exception");
+			System.out.println("Lexic - IO Exception : " + u);
 		}
 	}
 
@@ -211,20 +211,19 @@ public class Lexic {
 
 	String[] search(String search) {
 		search = search.toLowerCase();
-		System.out.println(search);
 		if (lemme.containsValue(search)) {
-			System.out.println("Existe déjà");
+//			System.out.println("Existe déjà");
 			return new String[]{search};
 		}
 		String[] prefixResults = getPrefixLemme(search);
 		if (prefixResults != null) {
-			System.out.println("Utilisation du prefix");
+//			System.out.println("Utilisation du prefix");
 			return prefixResults;
 		}
 		String[] levenshteinResults = getLevenshteinLemme(search);
 
 		if (levenshteinResults != null) {
-			System.out.println("Utilisation de levenshtein");
+//			System.out.println("Utilisation de levenshtein");
 			return levenshteinResults;
 		}
 		return null;
