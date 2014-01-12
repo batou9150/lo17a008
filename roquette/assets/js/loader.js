@@ -11,7 +11,26 @@ function load_results(natural_query) {
 		url : "servlet/LanceRequete",
 		data: { requete : natural_query }
 	}).done(function(data) {
-		$("#content").html(data);
+		var obj = $.parseJSON(data);
+		var content = "";
+		if(obj.naturalQuery != null && obj.naturalQuery != "")
+			content += "<div class=\"alert alert-success\">" + obj.naturalQuery + "</div>";
+		if(obj.queryPostCorrection != null && obj.queryPostCorrection != "")
+			content += "<div class=\"alert alert-info\">" + obj.queryPostCorrection + "</div>";
+		if(obj.queryPostLemme != null && obj.queryPostLemme != "")
+			content += "<div class=\"alert alert-info\">" + obj.queryPostLemme + "</div>";
+		if(obj.SQLQuery != null && obj.SQLQuery != "")
+			content += "<div class=\"alert alert-warning\">" + obj.SQLQuery + "</div>";
+		if(obj.error != null && obj.error != "")
+			content += "<div class=\"alert alert-danger\">" + obj.error + "</div>";
+		
+		if(obj.results != null && obj.results != "") {
+			content += "<div class=\"col-md-3\">";
+			if(obj.count != null) content += "Il y a " + obj.count + " r&eacute;sultats.";
+			content += obj.results + "</div><div id=\"display\" class=\"col-md-4\"></div>";
+		}
+		
+		$("#content").html(content);
 		$("#btn-go").html("Go!");
 	}).fail(function(jqXHR) {
 		$("#content").html(data + "servlet/LanceRequete");
