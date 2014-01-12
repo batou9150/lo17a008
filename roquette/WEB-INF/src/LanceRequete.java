@@ -42,13 +42,17 @@ public class LanceRequete extends HttpServlet {
 			throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		naturalQuery = null; queryPostCorrection = null; queryPostLemme = null;
-		SQLQuery = null; results = null; error = null; count = -1;
+		naturalQuery = null;
+		queryPostCorrection = null;
+		queryPostLemme = null;
+		SQLQuery = null;
+		results = null;
+		error = null;
+		count = -1;
 		naturalQuery = request.getParameter("requete");
-		if(naturalQuery.trim().equals("")) {
+		if (naturalQuery.trim().equals("")) {
 			error = "Requ&ecirc;te vide !";
-		}
-		else if (naturalQuery != null) {
+		} else if (naturalQuery != null) {
 			System.out.println("-> \"" + naturalQuery + "\"");
 
 			// Cleaning
@@ -64,7 +68,8 @@ public class LanceRequete extends HttpServlet {
 				if (SQLQuery != null && !SQLQuery.trim().equals("")) {
 					try {
 						results = interrogPostgresql();
-						if (results == null || results.trim().equals("")) {
+						if (results == null || results.trim().equals("")
+								|| count == 0) {
 							error = "Aucun r&eacute;sultats";
 						}
 					}
@@ -104,8 +109,10 @@ public class LanceRequete extends HttpServlet {
 			w.key("queryPostLemme").value(
 					queryPostLemme != null ? queryPostLemme : "");
 			w.key("SQLQuery").value(SQLQuery != null ? SQLQuery : "");
-			w.key("results").value(results != null ? results : "");
-			if(count != -1) w.key("count").value(count);
+			if (count != 0)
+				w.key("results").value(results != null ? results : "");
+			if (count != -1)
+				w.key("count").value(count);
 			w.key("error").value(error != null ? error : "").endObject();
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -125,13 +132,16 @@ public class LanceRequete extends HttpServlet {
 		int pageIndex = -1;
 		count = 0;
 
-		String result = "<table class=\"table\"><th>";
+		String result = "<table class=\"table\"><tr>";
 		for (int i = 1; i <= nbCol; i++) {
-			result += "<td>" + rsmd.getColumnLabel(i) + "</td>";
+			result += "<th>" + rsmd.getColumnLabel(i) + "</th>";
 			if (rsmd.getColumnLabel(i).equals("page"))
 				pageIndex = i;
+			else if (rsmd.getColumnLabel(i).equals("count")) {
+				count = -2;
+			}
 		}
-		result += "</th>";
+		result += "</tr>";
 
 		while (rs.next()) {
 			count++;

@@ -26,7 +26,11 @@ function load_results(natural_query) {
 		
 		if(obj.results != null && obj.results != "") {
 			content += "<div class=\"col-md-3\">";
-			if(obj.count != null) content += "Il y a " + obj.count + " r&eacute;sultats.";
+			if(obj.count != null) {
+				content += "Il y a " + obj.count + " r&eacute;sultat";
+				if(obj.count > 1) content += "s";
+				content += ".";
+			}
 			content += obj.results + "</div><div id=\"display\" class=\"col-md-4\"></div>";
 		}
 		
