@@ -31,8 +31,9 @@ public class Lexic {
 				String[] splittedString;
 				while ((chaine = br.readLine()) != null) {
 					splittedString = chaine.split(" \t");
-					lemme.put(Utils.removeAccents(splittedString[0]),
-							Utils.removeAccents(splittedString[1]));
+					if(splittedString[1].equals("pour ")) System.out.println("test1");
+					lemme.put(Utils.removeAccents(splittedString[0].trim()),
+							Utils.removeAccents(splittedString[1]).trim());
 				}
 			} catch (EOFException e) {
 				br.close();
@@ -210,15 +211,20 @@ public class Lexic {
 
 	String[] search(String search) {
 		search = search.toLowerCase();
+		System.out.println(search);
+		if (lemme.containsValue(search)) {
+			System.out.println("Existe déjà");
+			return new String[]{search};
+		}
 		String[] prefixResults = getPrefixLemme(search);
 		if (prefixResults != null) {
-			// System.out.println("Utilisation du prefix");
+			System.out.println("Utilisation du prefix");
 			return prefixResults;
 		}
 		String[] levenshteinResults = getLevenshteinLemme(search);
 
 		if (levenshteinResults != null) {
-			// System.out.println("Utilisation de levenshtein");
+			System.out.println("Utilisation de levenshtein");
 			return levenshteinResults;
 		}
 		return null;

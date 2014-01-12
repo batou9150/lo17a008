@@ -14,10 +14,18 @@ public class interrogPostgresql {
 		String url = "jdbc:postgresql://tuxa.sme.utc/dblo17";
 
 		String requete = AntlrMain.toSQLQuery(args, cleaner);
-		if(requete == null) return null;
+		if (requete == null)
+			return null;
+		requete = requete.replaceAll("rubrique.mot", "titre.rubrique");
 		String result = "";
-
 		System.out.println(requete);
+		result += "<div class=\"alert alert-info\">" + Cleaner.postCorrection
+				+ "</div>";
+		result += "<div class=\"alert alert-info\">" + Cleaner.postLemme
+				+ "</div>";
+		if (!requete.trim().equals(""))
+			result += "<div class=\"alert alert-warning\">" + requete
+					+ "</div>";
 
 		// INSTALL/load the Driver (Vendor specific Code)
 		try {
@@ -40,39 +48,47 @@ public class interrogPostgresql {
 
 			ResultSetMetaData rsmd = rs.getMetaData();
 			int nbCol = rsmd.getColumnCount();
+			int pageIndex = -1;
+			int compteur = 0;
 
-			result += "<table border=\"1\">\n";
-			result += "<tr>\n";
+			String tmpResult = "";
+			tmpResult += "<tr>\n";
 			for (int i = 1; i <= nbCol; i++) {
-				result += "<td>" + rsmd.getColumnLabel(i) + "</td>\n";
+				tmpResult += "<td>" + rsmd.getColumnLabel(i) + "</td>\n";
+				if (rsmd.getColumnLabel(i).equals("page"))
+					pageIndex = i;
 			}
-			result += "</tr>\n";
+			tmpResult += "</tr>\n";
 
 			while (rs.next()) {
-				result += "<tr>\n";
+				compteur++;
+				tmpResult += "<tr>\n";
 				for (int i = 1; i <= nbCol; i++) {
-					result += "<td>\n";
+					tmpResult += "<td>\n";
 					String s = rs.getString(i).trim();
-					if (requete.matches(".*page.*")) {
+					if (pageIndex != -1) {
 
-						result += "<a href=\"http://tuxa.sme.utc/~lo17a008/LCI/"
-								+ s
-								+ "\" target=\"_blank\">"
+						tmpResult += "<a href=\"#\" target=\"_self\" onclick=load_LCI(\""
+								+ rs.getString(pageIndex).trim()
+								+ "\")>"
 								+ s
 								+ "</a><br>\n";
 					} else {
-						result += s + "<br>\n";
+						tmpResult += s + "<br>\n";
 					}
-					result += "</td>\n";
+					tmpResult += "</td>\n";
 				}
-				result += "</tr>\n";
+				tmpResult += "</tr>\n";
 			}
 
-			result += "</table>\n";
+			tmpResult += "</table></div><div id=\"display\" class=\"col-md-4\"></div>\n";
 
 			// Close resources
 			stmt.close();
 			con.close();
+
+			result += "<div class=\"col-md-3\">Il y a " + compteur
+					+ " r&eacute;sultats.<table class=\"table\">\n" + tmpResult;
 
 		}
 		// print out decent erreur messages
@@ -82,6 +98,12 @@ public class interrogPostgresql {
 				System.out.println("Message:   " + ex.getMessage());
 				System.out.println("SQLState:  " + ex.getSQLState());
 				System.out.println("ErrorCode: " + ex.getErrorCode());
+				result += "<div class=\"alert alert-danger\">";
+				result += "Message:   " + Utils.htmlAccents(ex.getMessage())
+						+ "<br />";
+				result += "SQLState:  " + ex.getSQLState() + "<br />";
+				result += "ErrorCode: " + ex.getErrorCode() + "<br />";
+				result += "</div>";
 				ex = ex.getNextException();
 				System.out.println("");
 			}

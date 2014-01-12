@@ -10,12 +10,27 @@ public class Utils {
 	static Integer seuilDistanceLevenshtein = 6;
 
 	static String removeAccents(String s) {
-		s = s.replaceAll("[�]", "a");
-		s = s.replaceAll("[����]", "e");
-		s = s.replaceAll("[��]", "i");
-		s = s.replaceAll("[��]", "o");
-		s = s.replaceAll("[�]", "u");
-		s = s.replaceAll("[�]", "c");
+        s = s.replaceAll("[à]", "a");
+        s = s.replaceAll("[éèëê]", "e");
+        s = s.replaceAll("[îï]", "i");
+        s = s.replaceAll("[öô]", "o");
+        s = s.replaceAll("[ù]", "u");
+        s = s.replaceAll("[ç]", "c");
+		return s;
+	}
+
+	static String htmlAccents(String s) {
+        s = s.replaceAll("[à]", "a");
+        s = s.replaceAll("[é]", "&eacute;");
+        s = s.replaceAll("[è]", "&egrave;");
+        s = s.replaceAll("[ê]", "&ecirc;");
+        s = s.replaceAll("[ë]", "e");
+        s = s.replaceAll("[î]", "&icirc;");
+        s = s.replaceAll("[ï]", "i");
+        s = s.replaceAll("[ö]", "o");
+        s = s.replaceAll("[ô]", "&ocirc;");
+        s = s.replaceAll("[ù]", "&ugrave;");
+        s = s.replaceAll("[ç]", "c");
 		return s;
 	}
 

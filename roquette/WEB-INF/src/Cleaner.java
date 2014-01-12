@@ -13,6 +13,9 @@ import java.util.LinkedHashMap;
  * 
  */
 public class Cleaner {
+	
+	public static String postCorrection;
+	public static String postLemme;
 
 	private LinkedHashMap<String, String> lemme = new LinkedHashMap<String, String>();
 	private LinkedHashMap<String, String> advancedLemme = new LinkedHashMap<String, String>();
@@ -31,7 +34,7 @@ public class Cleaner {
 				String[] splittedString;
 				// Loading lemmes
 				URL u = new URL(
-						"http://tuxa.sme.utc/~lo17a008/ressources/lexiqueFull.txt");
+						"http://tuxa.sme.utc/~lo17a008/ressources/lemme.txt");
 				URLConnection uc = u.openConnection();
 				InputStream is = uc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is);
@@ -143,18 +146,23 @@ public class Cleaner {
 	 * @return The string cleaned
 	 */
 	String cleanString(String s) {
-		 System.out.println("Avant orthographique  : \"" + s + "\"");
-		s = Utils.removeAccents(s);
-		s = Utils.deleteOneLetter(s.toLowerCase());
-		s = applyStoplist(s);
+		System.out.println("Avant orthographique  : \"" + s + "\"");
 		s = s.replaceAll("( )+", " ");
 		s = s.replaceAll("'", " ");
-		 System.out.println("Après stop-list  : \"" + s + "\"");
+		s = Utils.removeAccents(s);
+		s = Utils.deleteOneLetter(s.toLowerCase());
+		// s = applyStoplist(s);
+		// System.out.println("Après stop-list  : \"" + s + "\"");
 		String[] split = s.split(" ");
 		int i = 0;
 		for (String n : split) {
-			if (n.trim().equals("?"))
+			if (n.trim().equals("?") ||
+					n.trim().contains("@") ||
+					n.trim().matches("-?\\d+(\\.\\d+)?"))
+			{
+				i++;
 				continue;
+			}
 			String[] result = lexic.search(n);
 			if (result != null && result.length > 0) {
 				System.out.println(split[i] + " - " + result[0]);
@@ -166,13 +174,15 @@ public class Cleaner {
 		for (String n : split) {
 			s = s + n + " ";
 		}
-		 System.out.println("Après correction orthographique  : \"" + s + "\"");
+		System.out.println("Après correction orthographique  : \"" + s + "\"");
+		postCorrection = s;
 		s = s.trim();
-		s = applyStoplist(s);
 		s = applyLemme(s);
 		s = applyAdvancedLemme(s);
+		s = applyStoplist(s);
 		s = s.replaceAll("[\\{\\}]", "");
 		s = Utils.removeAccents(s);
+		postLemme = s;
 		return s;
 	}
 }

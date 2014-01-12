@@ -4,12 +4,252 @@
 <title>Roquette</title>
 <link rel="icon" type="image/png" href="assets/img/rocket.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/loader.js"></script>
 </head>
-<frameset rows="*,*">
-	<frame src="FormLeft.html" name="top">
-	<frame src="servlet/LanceRequete" name="result">
-</frameset>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/roquette">
+				<img src="assets/img/rocket-small.png">
+				Roquette
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Suggestions
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<!-- Général -->
+						<li role="presentation" class="dropdown-header">Général</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels pages parlent du pape ?')"
+								target="_self">Quels pages parlent du pape ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Je voudrais les pages qui parlent du pape .')"
+								target="_self">Je voudrais les pages qui parlent du pape .</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Je veux les articles et les pages qui parlent du pape .')"
+								target="_self">Je veux les articles et les pages qui parlent du pape .</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Donne-moi les pages et les articles qui parlent de Jackson .')"
+								target="_self">Donne-moi les pages et les articles qui parlent de Jackson .</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quelles pages sont parus en mars 2005 et ont pour theme la religion ?')"
+								target="_self">Quelles pages sont parus en mars 2005 et ont
+								pour thème la religion ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('je veux les pages dont l'auteur est s@tf1.fr .')"
+								target="_self">je veux les pages dont l'auteur est s@tf1.fr .</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels pages et articles sont dans la rubrique focus et ecrit par s@tf1.fr et parus le 6 avril 2005 et dont le theme est paul et qui parlent de sexuel ?')"
+								target="_self">Quels pages et articles sont dans la rubrique focus et ecrit par s@tf1.fr et parus le 6 avril 2005 et dont le theme est paul et qui parlent de sexuel ?</a>
+						</li>
+						<!-- Rubrique -->
+						<li class="divider"></li>
+						<li role="presentation" class="dropdown-header">Rubrique</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels articles sont dans la rubrique focus ?')"
+								target="_self">Quels articles sont dans la rubrique focus ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Je voudrais les articles qui sont dans la rubrique une ?')"
+								target="_self">Je voudrais les articles qui sont dans la rubrique une ?</a>
+						</li>
+						<!-- Dates -->
+						<li class="divider"></li>
+						<li role="presentation" class="dropdown-header">Date</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels pages sont parus le 12 mars 2005 ?')"
+								target="_self">Quels pages sont parus le 12 mars 2005 ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels pages sont parus en mars 2005 ?')"
+								target="_self">Quels pages sont parus en mars 2005 ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quels pages sont parus en 2005 ?')"
+								target="_self">Quels pages sont parus en 2005 ?</a>
+						</li>
+						<!-- Count -->
+						<li class="divider"></li>
+						<li role="presentation" class="dropdown-header">Combien</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Je veux le nombre de pages sont parus le 12 mars 2005 ?')"
+								target="_self">Je veux le nombre de pages sont parus le 12 mars 2005 ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Combien de pages sont parus le 12 mars 2005 ?')"
+								target="_self">Combien de pages sont parus le 12 mars 2005 ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('CQuel est le nombre de pages sont parus le 12 mars 2005 ?')"
+								target="_self">Quel est le nombre de pages sont parus le 12 mars 2005 ?</a>
+						</li>
+						<!-- Correction orth -->
+						<li class="divider"></li>
+						<li role="presentation" class="dropdown-header">Correction orthographique</li>
+						<li>
+							<a href="#"
+								onclick="load_results('je vexu les pagr qui parlent du pape .')"
+								target="_self">je vexu les pagr qui parlent du pape .</a>
+						</li>
+						<!-- Non fonctionnel -->
+						<li class="divider"></li>
+						<li role="presentation" class="dropdown-header">Non fonctionnel</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Quel page parle du pape et du ministre ?')"
+								target="_self">Quel page parle du pape et du ministre ?</a>
+						</li>
+						<li>
+							<a href="#"
+								onclick="load_results('Je veux les articles qui sont dans la rubrique focus et dont le titre est pape .')"
+								target="_self">Je veux les articles qui sont dans la rubrique focus et dont le titre est pape .</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="col-md-6">
+				<div class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Rechercher"
+							name="requete" onkeyup="keyUp(event)">
+						<span class="input-group-btn">
+							<button class="btn btn-default" onclick="load_results()"
+								type="button" id="btn-go">Go!</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#" data-toggle="modal" data-target="#myModal">A propos</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</nav>
+	<!-- Content -->
+	<div class="container"><div class="row" id="content"></div></div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h3 class="modal-title" id="myModalLabel">À propos - Roquette</h3>
+				</div>
+				<div class="modal-body">
+					<img src="assets/img/rocket.png" class="pull-left"
+						style="margin-right: 15px">
+					<p style="text-align: justify">Le site web roquette est
+						l'aboutissement d'un semestre de travail au sein de l'UV LO17.
+						L'objectif étant de réaliser un système complet de recherche
+						d'information sur un corpus des pages LCI de 2005 suite à son
+						indexation au début du semèstre qui nous a fournit une base de
+						donnée complète permettant de retrouver facilement les
+						informations.</p>
+				</div>
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 350px">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+				    <div class="item active">
+				      <img src="assets/img/flyer0.png" alt="flyer">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/flyer4.png" alt="flyer">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/flyer5.png" alt="flyer">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/flyer1.png" alt="flyer">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/flyer2.png" alt="flyer">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/flyer3.png" alt="flyer">
+				    </div>
+				  </div>
+
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left"></span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right"></span>
+				  </a>
+				</div>
+
+				<div class="modal-body text-right">
+					<p>
+						Corentin LEFEVRE
+						<br />
+						Baptiste PIRAULT
+					</p>
+				</div>
+				<div class="modal-footer">
+					<p class="text-center">LO17 - A13</p>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</body>
 </html>

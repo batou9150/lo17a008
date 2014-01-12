@@ -19,11 +19,6 @@ public class LanceRequete extends HttpServlet {
 			throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<title>Lance requete!</title>");
-		out.println("</head>");
-		out.println("<body>");
 
 		// ---- configure START
 		username = "lo17xxx";
@@ -35,6 +30,7 @@ public class LanceRequete extends HttpServlet {
 
 		String requete;
 		requete = request.getParameter("requete");
+		System.out.println(requete);
 		if (requete != null && requete.trim() != "") {
 			// INSTALL/load the Driver (Vendor specific Code)
 			try {
@@ -44,13 +40,16 @@ public class LanceRequete extends HttpServlet {
 				System.err.println(e.getMessage());
 			}
 			try {
-				out.println(interrogPostgresql.roquette(requete));
+				String result = interrogPostgresql.roquette(requete);
+				if(result == null){
+					out.println("<div class=\"alert alert-danger\">Aucun r&eacute;sultats</div>");
+				} else {
+					out.println(result);
+				}
 			} catch (SQLException e) {
 			}
 		} else if (requete != null) {
-			out.println("Requete vide");
+			out.println("<div class=\"alert alert-danger\">Requete vide</div>");
 		}
-		out.println("</body>");
-		out.println("</html>");
 	}
 }
